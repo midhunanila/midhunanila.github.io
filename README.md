@@ -8,7 +8,7 @@ It showcases my research interests in **Biophysics**, **Molecular Dynamics**, an
 
 ## 🔬 About the Website
 
-This is a personal academic website built using HTML and CSS, inspired by minimalist researcher portfolios (like [Fabian Schuhmann's site](https://fabianschuhmann.github.io/)).
+This is a personal academic website built using HTML and CSS
 
 ### Features
 
