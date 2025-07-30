@@ -1,4 +1,4 @@
-# Dr. Midhuna Nila — Personal Academic Website
+# Dr. Midhuna Anila — Personal Academic Website
 
 This repository hosts my academic homepage, available at:
 
