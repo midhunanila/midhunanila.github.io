@@ -1,18 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Midhun Mohan Anila | Biophysics Researcher</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Font Awesome for icons -->
+  <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    rel="stylesheet"
+  />
+
   <style>
     html {
       scroll-behavior: smooth;
     }
     body {
-      font-family: 'Segoe UI', sans-serif;
-      background: #f4f9fb;
-      color: #333;
       margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #e0f7fa, #ffffff);
+      color: #333;
     }
 
     header {
@@ -20,24 +27,25 @@
       color: white;
       padding: 3rem 1rem 2rem;
       text-align: center;
+      position: relative;
     }
 
     header img {
       width: 150px;
       height: 150px;
       border-radius: 50%;
+      border: 5px solid white;
       object-fit: cover;
-      border: 4px solid white;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
       margin-top: 1rem;
     }
 
     nav {
-      background: #00789c;
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      background: #00789c;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     }
 
     nav button {
@@ -45,40 +53,45 @@
       border: none;
       color: white;
       font-weight: bold;
-      padding: 1rem;
-      font-size: 1rem;
+      padding: 1rem 1.5rem;
       cursor: pointer;
-      transition: background 0.3s;
+      font-size: 1rem;
+      transition: background 0.3s, transform 0.2s;
     }
 
     nav button:hover {
       background: #005f7f;
+      transform: scale(1.05);
     }
 
     .section {
       max-width: 900px;
-      margin: auto;
-      padding: 0;
+      margin: 20px auto;
       background: white;
-      border-radius: 8px;
-      margin-top: 20px;
+      border-radius: 10px;
       overflow: hidden;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-      display: none;
-    }
-
-    .section.open {
-      display: block;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      transition: all 0.4s ease-in-out;
     }
 
     .section-content {
-      padding: 30px 20px;
+      display: none;
+      padding: 30px 25px;
+      animation: fadeIn 0.6s ease-in;
+    }
+
+    .section.open .section-content {
+      display: block;
+    }
+
+    h1, h2 {
+      margin: 0.5em 0;
     }
 
     h2 {
       color: #004d66;
-      margin-bottom: 1rem;
       font-size: 1.5rem;
+      margin-bottom: 1rem;
     }
 
     ul {
@@ -87,19 +100,35 @@
 
     a {
       color: #00789c;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .icon-links a {
+      margin: 0 0.5rem;
+      color: white;
+      font-size: 1.5rem;
+      transition: color 0.3s;
+    }
+
+    .icon-links a:hover {
+      color: #ffd700;
     }
 
     footer {
       text-align: center;
-      padding: 2rem;
+      padding: 2rem 1rem;
       background: #004d66;
       color: white;
-      margin-top: 60px;
+      margin-top: 50px;
     }
 
-    a img:hover {
-      transform: scale(1.2);
-      transition: transform 0.2s ease;
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     @media screen and (max-width: 600px) {
@@ -119,36 +148,32 @@
 
 <header>
   <h1>Midhun Mohan Anila</h1>
-  <p>PhD Student, Institute of Physics, Polish Academy of Sciences, Warsaw</p>
-  <p>Supervisor: Dr. hab. Bartosz Różycki</p>
-  <img src="profile.jpg" alt="Midhun's Photo">
-  <p>
-    <a href="mailto:midhun@ifpan.edu.pl" style="color:#cde;">midhun@ifpan.edu.pl</a> |
-    <a href="https://www.linkedin.com/in/midhun-mohan-anila-8a959679/" target="_blank" style="color:#cde;">LinkedIn</a>
+  <p>PhD Student in Computational Biophysics<br>Institute of Physics, Polish Academy of Sciences, Warsaw</p>
+  <img src="profile.jpg" alt="Midhun's Photo" />
+  <p style="margin-top: 1rem;">
+    Supervisor: Dr. hab. Bartosz Różycki
   </p>
-  <div style="margin-top: 1rem;">
-    <a href="https://scholar.google.pl/citations?user=7EmEQ7YAAAAJ&hl=en" target="_blank" style="margin: 0 10px;">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Google_Scholar_logo.svg" alt="Google Scholar" width="24" height="24">
-    </a>
-    <a href="https://orcid.org/0000-0002-8084-6828" target="_blank" style="margin: 0 10px;">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/0/06/ORCID_iD.svg" alt="ORCID" width="24" height="24">
-    </a>
+  <div class="icon-links">
+    <a href="mailto:midhun@ifpan.edu.pl" title="Email"><i class="fas fa-envelope"></i></a>
+    <a href="https://www.linkedin.com/in/midhun-mohan-anila-8a959679/" title="LinkedIn" target="_blank"><i class="fab fa-linkedin"></i></a>
+    <a href="https://scholar.google.pl/citations?user=7EmEQ7YAAAAJ&hl=en" title="Google Scholar" target="_blank"><i class="fas fa-graduation-cap"></i></a>
+    <a href="https://orcid.org/0000-0002-8084-6828" title="ORCID" target="_blank"><i class="fab fa-orcid"></i></a>
   </div>
 </header>
 
 <nav>
-  <button onclick="openSection('about')">About</button>
-  <button onclick="openSection('research')">Research</button>
-  <button onclick="openSection('publications')">Publications</button>
-  <button onclick="openSection('presentations')">Presentations</button>
-  <button onclick="openSection('skills')">Skills</button>
-  <button onclick="openSection('contact')">Contact</button>
+  <button onclick="toggleSection('about')">About</button>
+  <button onclick="toggleSection('research')">Research</button>
+  <button onclick="toggleSection('publications')">Publications</button>
+  <button onclick="toggleSection('presentations')">Presentations</button>
+  <button onclick="toggleSection('skills')">Skills</button>
+  <button onclick="toggleSection('contact')">Contact</button>
 </nav>
 
 <div id="about" class="section">
   <div class="section-content">
     <h2>About Me</h2>
-    <p>I am a PhD student in Computational Biophysics at the Polish Academy of Sciences, Warsaw. My research focuses on molecular dynamics simulations of intrinsically disordered proteins and understanding biomolecular mechanisms through physics-based models.</p>
+    <p>I am a PhD candidate specializing in Computational Biophysics at the Polish Academy of Sciences. My work focuses on molecular dynamics simulations of intrinsically disordered proteins (IDPs), exploring complex biomolecular mechanisms using physics-based approaches.</p>
   </div>
 </div>
 
@@ -158,20 +183,21 @@
     <ul>
       <li>Molecular Dynamics Simulations</li>
       <li>Intrinsically Disordered Proteins</li>
-      <li>Computational Biophysics</li>
-      <li>Membrane Biophysics and Protein Interactions</li>
+      <li>Membrane Biophysics & Protein Interactions</li>
+      <li>Coarse-Grained Modeling & IDP Aggregation</li>
     </ul>
   </div>
 </div>
 
 <div id="publications" class="section">
   <div class="section-content">
-    <h2>Publications (Selected)</h2>
+    <h2>Selected Publications</h2>
     <ul>
-      <li><strong>2025</strong> — Pham DQH, Anila MM, Chwastyk M. Clustering‑based Method for Constructing the Phase Diagram of the Van Der Waals Model Fluid</li>
-      <li><strong>2024</strong> — Anila MM, Rogowski P, Różycki B. Scrutinising the Conformational Ensemble of the Intrinsically Mixed‑Folded Protein Galectin‑3, <em>Molecules</em> 29(12): 2768</li>
-      <li><strong>2024</strong> — Smardz P, Anila MM, Rogowski P, Różycki B et al. A Practical Guide to All‑Atom and Coarse‑Grained MD Simulations Using Amber & Gromacs</li>
-      <li><strong>2023</strong> — Anila MM, Ghosh R, Różycki B. Membrane curvature sensing by model biomolecular condensates, <em>Soft Matter</em> 19(20): 3723–3732</li>
+      <li><strong>2024</strong> — Galectin-3 conformational analysis, <em>Molecules</em> 29(12): 2768</li>
+      <li><strong>2024</strong> — Guide to MD Simulations, <em>Int. J. Mol. Sci</em> 25: 6698</li>
+      <li><strong>2023</strong> — Membrane curvature sensing, <em>Soft Matter</em> 19: 3723–3732</li>
+      <li><strong>2023</strong> — Lipid transport structure, <em>Cells</em> 12(15)</li>
+      <li><strong>2021</strong> — Magnetic response of Brownian particles, <em>IJAMTP</em> 7(1):10–15</li>
     </ul>
   </div>
 </div>
@@ -214,14 +240,15 @@
 </footer>
 
 <script>
-  let currentOpen = null;
-  function openSection(id) {
-    if (currentOpen && currentOpen !== id) {
-      document.getElementById(currentOpen).classList.remove("open");
-    }
-    const section = document.getElementById(id);
-    section.classList.toggle("open");
-    currentOpen = section.classList.contains("open") ? id : null;
+  function toggleSection(id) {
+    const sections = document.querySelectorAll(".section");
+    sections.forEach((section) => {
+      if (section.id === id) {
+        section.classList.toggle("open");
+      } else {
+        section.classList.remove("open");
+      }
+    });
   }
 </script>
 
