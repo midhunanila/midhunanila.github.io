@@ -1,61 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Midhun Mohan Anila | Computational Biophysics</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://fonts.googleapis.com/css2?family=Segoe+UI&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <title>Midhun Mohan Anila | Biophysics Researcher</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <style>
-    :root {
-      --bg-color: #f4f9fb;
-      --text-color: #333;
-      --header-bg: linear-gradient(to right, #004d66, #00789c);
-      --nav-bg: #00789c;
-      --accent: #005f7f;
-    }
-
-    [data-theme="dark"] {
-      --bg-color: #121212;
-      --text-color: #f4f4f4;
-      --header-bg: linear-gradient(to right, #1c1c1c, #333);
-      --nav-bg: #222;
-      --accent: #555;
-    }
-
     html {
       scroll-behavior: smooth;
     }
-
     body {
       font-family: 'Segoe UI', sans-serif;
-      background: var(--bg-color);
-      color: var(--text-color);
+      background: #eef6f9;
+      color: #222;
       margin: 0;
-      transition: background 0.3s, color 0.3s;
     }
 
     header {
-      background: var(--header-bg);
+      background: linear-gradient(to right, #003547, #006b8d);
       color: white;
-      padding: 2.5rem 1rem;
+      padding: 3rem 1rem 2rem;
       text-align: center;
+      position: relative;
     }
 
     header img {
-      width: 140px;
-      height: 140px;
+      width: 150px;
+      height: 150px;
       border-radius: 50%;
       object-fit: cover;
       border: 4px solid white;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      margin-top: 1rem;
+    }
+
+    .contact-icons {
+      margin-top: 1rem;
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+    }
+
+    .contact-icons a img {
+      width: 30px;
+      height: 30px;
+      transition: transform 0.3s ease;
+    }
+
+    .contact-icons a:hover img {
+      transform: scale(1.2);
     }
 
     nav {
-      background: var(--nav-bg);
+      background: #006b8d;
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     }
 
     nav button {
@@ -69,32 +69,43 @@
       transition: background 0.3s;
     }
 
-    nav button:hover, .active {
-      background: var(--accent);
+    nav button:hover {
+      background: #004d66;
     }
 
     .section {
-      max-width: 960px;
+      max-width: 900px;
       margin: auto;
-      padding: 0;
       background: white;
       border-radius: 8px;
       margin-top: 20px;
       overflow: hidden;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+      display: none;
+      transition: all 0.5s ease;
+    }
+
+    .section.active {
+      display: block;
     }
 
     .section-content {
       padding: 30px 20px;
-      display: none;
     }
 
-    .section.open .section-content {
-      display: block;
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
     }
 
     h2 {
       color: #004d66;
+      margin-bottom: 1rem;
+      font-size: 1.5rem;
+    }
+
+    ul {
+      padding-left: 1.5rem;
     }
 
     a {
@@ -110,57 +121,61 @@
       margin-top: 60px;
     }
 
-    #theme-toggle {
-      position: absolute;
-      top: 1rem;
-      right: 1rem;
-      background: none;
-      border: 2px solid white;
-      border-radius: 20px;
-      padding: 0.4rem 0.7rem;
-      color: white;
-      cursor: pointer;
-    }
+    @media screen and (max-width: 600px) {
+      nav button {
+        padding: 0.7rem;
+        font-size: 14px;
+      }
 
-    .badge {
-      margin: 0.5rem;
+      header img {
+        width: 100px;
+        height: 100px;
+      }
+
+      .contact-icons {
+        flex-wrap: wrap;
+      }
     }
   </style>
 </head>
 <body>
 
 <header>
-  <button id="theme-toggle">🌙</button>
   <h1>Midhun Mohan Anila</h1>
   <p>PhD Student, Institute of Physics, Polish Academy of Sciences, Warsaw</p>
-  <p><strong>Supervisor:</strong> Dr. hab. Bartosz Różycki</p>
-  <img src="profile.jpg" alt="Midhun's Photo">
+  <p>Supervisor: Dr. hab. Bartosz Różycki</p>
+  <img src="profile.jpg" alt="Midhun's Photo" />
+
   <p>
-    <a href="mailto:midhun@ifpan.edu.pl">midhun@ifpan.edu.pl</a> |
-    <a href="https://www.linkedin.com/in/midhun-mohan-anila-8a959679/" target="_blank">LinkedIn</a>
+    <a href="mailto:midhun@ifpan.edu.pl" style="color:#dfe;">midhun@ifpan.edu.pl</a>
   </p>
-  <p>
-    <a href="CV_Midhun.pdf" download>📄 Download CV</a>
-  </p>
-  <p>
-    <a href="https://orcid.org/0000-0000-0000-0000" target="_blank"><img class="badge" src="https://info.orcid.org/wp-content/uploads/2019/11/orcid_16x16.png" alt="ORCID"></a>
-    <a href="https://scholar.google.com/citations?user=XXXX" target="_blank"><img class="badge" src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Google_Scholar_logo.png" alt="Google Scholar" width="16"></a>
-  </p>
+
+  <div class="contact-icons">
+    <a href="https://www.linkedin.com/in/midhun-mohan-anila-8a959679/" target="_blank" title="LinkedIn">
+      <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg" alt="LinkedIn" />
+    </a>
+    <a href="https://scholar.google.pl/citations?user=7EmEQ7YAAAAJ&hl=en" target="_blank" title="Google Scholar">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Google_Scholar_logo.svg" alt="Google Scholar" />
+    </a>
+    <a href="https://orcid.org/0000-0002-8084-6828" target="_blank" title="ORCID">
+      <img src="https://orcid.org/sites/default/files/images/orcid_32x32.png" alt="ORCID" />
+    </a>
+  </div>
 </header>
 
 <nav>
-  <button onclick="openSection('about')">About</button>
-  <button onclick="openSection('research')">Research</button>
-  <button onclick="openSection('publications')">Publications</button>
-  <button onclick="openSection('presentations')">Presentations</button>
-  <button onclick="openSection('skills')">Skills</button>
-  <button onclick="openSection('contact')">Contact</button>
+  <button onclick="showSection('about')">About</button>
+  <button onclick="showSection('research')">Research</button>
+  <button onclick="showSection('publications')">Publications</button>
+  <button onclick="showSection('presentations')">Presentations</button>
+  <button onclick="showSection('skills')">Skills</button>
+  <button onclick="showSection('contact')">Contact</button>
 </nav>
 
-<div id="about" class="section">
+<div id="about" class="section active">
   <div class="section-content">
     <h2>About Me</h2>
-    <p>I am a PhD student in Computational Biophysics. I study molecular dynamics of intrinsically disordered proteins and related biomolecular systems using physics-based simulation tools.</p>
+    <p>I am a PhD student in Computational Biophysics at the Polish Academy of Sciences, Warsaw. My research focuses on molecular dynamics simulations of intrinsically disordered proteins and understanding biomolecular mechanisms through physics-based models.</p>
   </div>
 </div>
 
@@ -178,37 +193,38 @@
 
 <div id="publications" class="section">
   <div class="section-content">
-    <h2>Publications</h2>
+    <h2>Publications (Selected, Peer‑Reviewed Only)</h2>
     <ul>
-      <li>2024 — Galectin-3 conformational analysis, <em>Molecules</em> 29(12): 2768</li>
-      <li>2024 — Guide to MD Simulations, <em>Int. J. Mol. Sci</em> 25: 6698</li>
-      <li>2023 — Membrane curvature sensing, <em>Soft Matter</em> 19: 3723–3732</li>
-      <li>2023 — Lipid transport structure, <em>Cells</em> 12(15)</li>
-      <li>2021 — Magnetic response of Brownian particles, <em>IJAMTP</em> 7(1):10–15</li>
+      <li><strong>2025</strong> — Pham DQH, Anila MM, Chwastyk M. Clustering‑based Method for Constructing the Phase Diagram of the Van Der Waals Model Fluid (Article) :contentReference[oaicite:8]{index=8}</li>
+      <li><strong>2024</strong> — Anila MM, Rogowski P, Różycki B. Scrutinising the Conformational Ensemble of the Intrinsically Mixed‑Folded Protein Galectin‑3, <em>Molecules</em> 29(12): 2768 :contentReference[oaicite:9]{index=9}</li>
+      <li><strong>2024</strong> — Smardz P, Anila MM, Rogowski P, Różycki B et al. A Practical Guide to All‑Atom and Coarse‑Grained MD Simulations Using Amber & Gromacs (MDPI guide) :contentReference[oaicite:10]{index=10}</li>
+      <li><strong>2023</strong> — Anila MM, Ghosh R, Różycki B. Membrane curvature sensing by model biomolecular condensates, <em>Soft Matter</em> 19(20): 3723–3732 :contentReference[oaicite:11]{index=11}</li>
     </ul>
   </div>
 </div>
 
+
 <div id="presentations" class="section">
   <div class="section-content">
-    <h2>Presentations</h2>
+    <h2>Presentations & Conferences</h2>
     <ul>
-      <li>Oral: Galectin-3, UGM London 2024</li>
-      <li>Poster: Membrane curvature sensing, ECMTB Toledo 2024</li>
-      <li>Poster: CG MD of IDPs, Krakow 2023</li>
-      <li>Poster: Alpha-synuclein aggregation, PTBF Warsaw 2022</li>
+      <li><strong>Oral:</strong> Galectin-3, UGM London 2024</li>
+      <li><strong>Poster:</strong> Membrane curvature sensing, ECMTB Toledo 2024</li>
+      <li><strong>Poster:</strong> CG MD of IDPs, Krakow 2023</li>
+      <li><strong>Poster:</strong> Alpha-synuclein aggregation, PTBF Warsaw 2022</li>
+      <li><strong>Participation:</strong> EMBO Symposium, ECMTB 2024, UGM 2024</li>
     </ul>
   </div>
 </div>
 
 <div id="skills" class="section">
   <div class="section-content">
-    <h2>Skills</h2>
+    <h2>Technical Skills</h2>
     <ul>
       <li><strong>Languages:</strong> Python, Bash</li>
-      <li><strong>Tools:</strong> Mathematica, Gnuplot, Origin</li>
-      <li><strong>MD Software:</strong> Gromacs, LAMMPS, VMD, PyMOL</li>
-      <li><strong>Other:</strong> LaTeX, Linux, Tisean</li>
+      <li><strong>Tools:</strong> Mathematica, Gnuplot, Origin, XMGrace</li>
+      <li><strong>MD Software:</strong> Gromacs, LAMMPS, NAMD, VMD, PyMOL</li>
+      <li><strong>Other:</strong> Linux systems, LaTeX, Tisean 3.0.1</li>
     </ul>
   </div>
 </div>
@@ -218,6 +234,8 @@
     <h2>Contact</h2>
     <p>Email: <a href="mailto:midhun@ifpan.edu.pl">midhun@ifpan.edu.pl</a></p>
     <p>LinkedIn: <a href="https://www.linkedin.com/in/midhun-mohan-anila-8a959679/" target="_blank">View Profile</a></p>
+    <p>Google Scholar: <a href="https://scholar.google.pl/citations?user=7EmEQ7YAAAAJ" target="_blank">Profile</a></p>
+    <p>ORCID: <a href="https://orcid.org/0000-0002-8084-6828" target="_blank">0000-0002-8084-6828</a></p>
   </div>
 </div>
 
@@ -226,19 +244,11 @@
 </footer>
 
 <script>
-  const sections = document.querySelectorAll('.section');
-
-  function openSection(id) {
-    sections.forEach(sec => {
-      sec.classList.remove('open');
-    });
-    document.getElementById(id).classList.add('open');
+  function showSection(id) {
+    const sections = document.querySelectorAll('.section');
+    sections.forEach(sec => sec.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
   }
-
-  document.getElementById('theme-toggle').addEventListener('click', () => {
-    const currentTheme = document.documentElement.getAttribute('data-theme');
-    document.documentElement.setAttribute('data-theme', currentTheme === 'dark' ? 'light' : 'dark');
-  });
 </script>
 
 </body>
