@@ -1,48 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Midhun Mohan Anila | Biophysics Researcher</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <title>Midhun Mohan Anila | Computational Biophysics</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Segoe+UI&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --bg-color: #f4f9fb;
+      --text-color: #333;
+      --header-bg: linear-gradient(to right, #004d66, #00789c);
+      --nav-bg: #00789c;
+      --accent: #005f7f;
+    }
+
+    [data-theme="dark"] {
+      --bg-color: #121212;
+      --text-color: #f4f4f4;
+      --header-bg: linear-gradient(to right, #1c1c1c, #333);
+      --nav-bg: #222;
+      --accent: #555;
+    }
+
     html {
       scroll-behavior: smooth;
     }
+
     body {
       font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(to right, #e0f7fa, #f1f8ff);
-      color: #333;
+      background: var(--bg-color);
+      color: var(--text-color);
       margin: 0;
+      transition: background 0.3s, color 0.3s;
     }
 
     header {
-      background: linear-gradient(to right, #004d66, #0097a7);
+      background: var(--header-bg);
       color: white;
-      padding: 3rem 1rem 2rem;
+      padding: 2.5rem 1rem;
       text-align: center;
     }
 
     header img {
-      width: 150px;
-      height: 150px;
+      width: 140px;
+      height: 140px;
       border-radius: 50%;
       object-fit: cover;
       border: 4px solid white;
       box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-      margin-top: 1rem;
-      transition: transform 0.3s;
-    }
-
-    header img:hover {
-      transform: scale(1.05);
     }
 
     nav {
-      background: #006d8f;
+      background: var(--nav-bg);
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
 
     nav button {
@@ -50,34 +63,30 @@
       border: none;
       color: white;
       font-weight: bold;
-      padding: 1rem 1.5rem;
+      padding: 1rem;
       font-size: 1rem;
       cursor: pointer;
-      transition: all 0.3s;
+      transition: background 0.3s;
     }
 
-    nav button:hover,
-    nav button.active {
-      background: #00bcd4;
-      color: #fff;
-      border-bottom: 4px solid #004d66;
+    nav button:hover, .active {
+      background: var(--accent);
     }
 
     .section {
-      max-width: 900px;
+      max-width: 960px;
       margin: auto;
+      padding: 0;
       background: white;
-      border-radius: 10px;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+      border-radius: 8px;
       margin-top: 20px;
       overflow: hidden;
-      transition: all 0.4s ease;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
     }
 
     .section-content {
       padding: 30px 20px;
       display: none;
-      animation: fadeIn 0.5s ease-in-out;
     }
 
     .section.open .section-content {
@@ -85,27 +94,12 @@
     }
 
     h2 {
-      color: #006064;
-      font-size: 1.8rem;
-      margin-bottom: 1rem;
-    }
-
-    ul {
-      padding-left: 1.5rem;
-      margin-top: 0.5rem;
-    }
-
-    li {
-      margin-bottom: 0.7rem;
+      color: #004d66;
     }
 
     a {
       color: #00789c;
       text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
     }
 
     footer {
@@ -116,49 +110,57 @@
       margin-top: 60px;
     }
 
-    @media screen and (max-width: 600px) {
-      nav button {
-        padding: 0.7rem;
-        font-size: 14px;
-      }
-
-      header img {
-        width: 100px;
-        height: 100px;
-      }
+    #theme-toggle {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background: none;
+      border: 2px solid white;
+      border-radius: 20px;
+      padding: 0.4rem 0.7rem;
+      color: white;
+      cursor: pointer;
     }
 
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(10px); }
-      to { opacity: 1; transform: translateY(0); }
+    .badge {
+      margin: 0.5rem;
     }
   </style>
 </head>
 <body>
 
 <header>
+  <button id="theme-toggle">🌙</button>
   <h1>Midhun Mohan Anila</h1>
   <p>PhD Student, Institute of Physics, Polish Academy of Sciences, Warsaw</p>
-  <img src="profile.jpg" alt="Midhun's Photo" />
+  <p><strong>Supervisor:</strong> Dr. hab. Bartosz Różycki</p>
+  <img src="profile.jpg" alt="Midhun's Photo">
   <p>
-    <a href="mailto:midhun@ifpan.edu.pl" style="color:#e0f7fa;">midhun@ifpan.edu.pl</a> | 
-    <a href="https://www.linkedin.com/in/midhun-mohan-anila-8a959679/" target="_blank" style="color:#e0f7fa;">LinkedIn</a>
+    <a href="mailto:midhun@ifpan.edu.pl">midhun@ifpan.edu.pl</a> |
+    <a href="https://www.linkedin.com/in/midhun-mohan-anila-8a959679/" target="_blank">LinkedIn</a>
+  </p>
+  <p>
+    <a href="CV_Midhun.pdf" download>📄 Download CV</a>
+  </p>
+  <p>
+    <a href="https://orcid.org/0000-0000-0000-0000" target="_blank"><img class="badge" src="https://info.orcid.org/wp-content/uploads/2019/11/orcid_16x16.png" alt="ORCID"></a>
+    <a href="https://scholar.google.com/citations?user=XXXX" target="_blank"><img class="badge" src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Google_Scholar_logo.png" alt="Google Scholar" width="16"></a>
   </p>
 </header>
 
 <nav>
-  <button onclick="toggleSection('about', this)">About</button>
-  <button onclick="toggleSection('research', this)">Research</button>
-  <button onclick="toggleSection('publications', this)">Publications</button>
-  <button onclick="toggleSection('presentations', this)">Presentations</button>
-  <button onclick="toggleSection('skills', this)">Skills</button>
-  <button onclick="toggleSection('contact', this)">Contact</button>
+  <button onclick="openSection('about')">About</button>
+  <button onclick="openSection('research')">Research</button>
+  <button onclick="openSection('publications')">Publications</button>
+  <button onclick="openSection('presentations')">Presentations</button>
+  <button onclick="openSection('skills')">Skills</button>
+  <button onclick="openSection('contact')">Contact</button>
 </nav>
 
 <div id="about" class="section">
   <div class="section-content">
     <h2>About Me</h2>
-    <p>I am a PhD student in Computational Biophysics at the Polish Academy of Sciences, Warsaw. My research focuses on molecular dynamics simulations of intrinsically disordered proteins and understanding biomolecular mechanisms through physics-based models.</p>
+    <p>I am a PhD student in Computational Biophysics. I study molecular dynamics of intrinsically disordered proteins and related biomolecular systems using physics-based simulation tools.</p>
   </div>
 </div>
 
@@ -176,38 +178,37 @@
 
 <div id="publications" class="section">
   <div class="section-content">
-    <h2>Publications (Selected)</h2>
+    <h2>Publications</h2>
     <ul>
-      <li><strong>2024</strong> — Galectin-3 conformational analysis, <em>Molecules</em> 29(12): 2768</li>
-      <li><strong>2024</strong> — Guide to MD Simulations, <em>Int. J. Mol. Sci</em> 25: 6698</li>
-      <li><strong>2023</strong> — Membrane curvature sensing, <em>Soft Matter</em> 19: 3723–3732</li>
-      <li><strong>2023</strong> — Lipid transport structure, <em>Cells</em> 12(15)</li>
-      <li><strong>2021</strong> — Magnetic response of Brownian particles, <em>IJAMTP</em> 7(1):10–15</li>
+      <li>2024 — Galectin-3 conformational analysis, <em>Molecules</em> 29(12): 2768</li>
+      <li>2024 — Guide to MD Simulations, <em>Int. J. Mol. Sci</em> 25: 6698</li>
+      <li>2023 — Membrane curvature sensing, <em>Soft Matter</em> 19: 3723–3732</li>
+      <li>2023 — Lipid transport structure, <em>Cells</em> 12(15)</li>
+      <li>2021 — Magnetic response of Brownian particles, <em>IJAMTP</em> 7(1):10–15</li>
     </ul>
   </div>
 </div>
 
 <div id="presentations" class="section">
   <div class="section-content">
-    <h2>Presentations & Conferences</h2>
+    <h2>Presentations</h2>
     <ul>
-      <li><strong>Oral:</strong> Galectin-3, UGM London 2024</li>
-      <li><strong>Poster:</strong> Membrane curvature sensing, ECMTB Toledo 2024</li>
-      <li><strong>Poster:</strong> CG MD of IDPs, Krakow 2023</li>
-      <li><strong>Poster:</strong> Alpha-synuclein aggregation, PTBF Warsaw 2022</li>
-      <li><strong>Participation:</strong> EMBO Symposium, ECMTB 2024, UGM 2024</li>
+      <li>Oral: Galectin-3, UGM London 2024</li>
+      <li>Poster: Membrane curvature sensing, ECMTB Toledo 2024</li>
+      <li>Poster: CG MD of IDPs, Krakow 2023</li>
+      <li>Poster: Alpha-synuclein aggregation, PTBF Warsaw 2022</li>
     </ul>
   </div>
 </div>
 
 <div id="skills" class="section">
   <div class="section-content">
-    <h2>Technical Skills</h2>
+    <h2>Skills</h2>
     <ul>
       <li><strong>Languages:</strong> Python, Bash</li>
-      <li><strong>Tools:</strong> Mathematica, Gnuplot, Origin, XMGrace</li>
-      <li><strong>MD Software:</strong> Gromacs, LAMMPS, NAMD, VMD, PyMOL</li>
-      <li><strong>Other:</strong> Linux systems, LaTeX, Tisean 3.0.1</li>
+      <li><strong>Tools:</strong> Mathematica, Gnuplot, Origin</li>
+      <li><strong>MD Software:</strong> Gromacs, LAMMPS, VMD, PyMOL</li>
+      <li><strong>Other:</strong> LaTeX, Linux, Tisean</li>
     </ul>
   </div>
 </div>
@@ -225,23 +226,19 @@
 </footer>
 
 <script>
-  function toggleSection(id, btn) {
-    const sections = document.querySelectorAll(".section");
-    const buttons = document.querySelectorAll("nav button");
+  const sections = document.querySelectorAll('.section');
 
-    sections.forEach((sec) => {
-      if (sec.id === id) {
-        sec.classList.toggle("open");
-      } else {
-        sec.classList.remove("open");
-      }
+  function openSection(id) {
+    sections.forEach(sec => {
+      sec.classList.remove('open');
     });
-
-    buttons.forEach((button) => button.classList.remove("active"));
-    if (document.getElementById(id).classList.contains("open")) {
-      btn.classList.add("active");
-    }
+    document.getElementById(id).classList.add('open');
   }
+
+  document.getElementById('theme-toggle').addEventListener('click', () => {
+    const currentTheme = document.documentElement.getAttribute('data-theme');
+    document.documentElement.setAttribute('data-theme', currentTheme === 'dark' ? 'light' : 'dark');
+  });
 </script>
 
 </body>
