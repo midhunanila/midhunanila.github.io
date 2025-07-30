@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Midhun Mohan Anila | Biophysics Researcher</title>
+  <title> Midhun Mohan Anila | Biophysics Researcher</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     html {
@@ -12,17 +12,14 @@
       font-family: 'Segoe UI', sans-serif;
       background: #f4f9fb;
       color: #333;
-      line-height: 1.6;
       margin: 0;
-      padding: 0;
     }
 
     header {
       background: linear-gradient(to right, #004d66, #00789c);
       color: white;
-      padding: 3rem 1rem 2rem 1rem;
+      padding: 3rem 1rem 2rem;
       text-align: center;
-      position: relative;
     }
 
     header img {
@@ -37,46 +34,56 @@
 
     nav {
       background: #00789c;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
 
-    nav a {
+    nav button {
+      background: none;
+      border: none;
       color: white;
-      padding: 0.75rem 1.2rem;
-      text-decoration: none;
       font-weight: bold;
+      padding: 1rem;
+      font-size: 1rem;
+      cursor: pointer;
       transition: background 0.3s;
     }
 
-    nav a:hover {
+    nav button:hover {
       background: #005f7f;
     }
 
-    section {
+    .section {
       max-width: 900px;
       margin: auto;
-      padding: 60px 20px;
+      padding: 0;
       background: white;
+      border-radius: 8px;
+      margin-top: 20px;
+      overflow: hidden;
       box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-      border-radius: 10px;
-      margin-top: 40px;
+      transition: max-height 0.5s ease, padding 0.5s ease;
+    }
+
+    .section-content {
+      padding: 30px 20px;
+      display: none;
+    }
+
+    .section.open .section-content {
+      display: block;
     }
 
     h2 {
       color: #004d66;
-      border-bottom: 2px solid #ddd;
-      padding-bottom: 0.5rem;
       margin-bottom: 1rem;
+      font-size: 1.5rem;
     }
 
     ul {
-      padding-left: 1.2rem;
+      padding-left: 1.5rem;
     }
 
     a {
@@ -92,8 +99,8 @@
     }
 
     @media screen and (max-width: 600px) {
-      nav a {
-        padding: 0.5rem;
+      nav button {
+        padding: 0.7rem;
         font-size: 14px;
       }
 
@@ -107,7 +114,7 @@
 <body>
 
 <header>
-  <h1>Dr. Midhun Mohan Anila</h1>
+  <h1>Midhun Mohan Anila</h1>
   <p>PhD Student, Institute of Physics, Polish Academy of Sciences, Warsaw</p>
   <img src="profile.jpg" alt="Midhun's Photo">
   <p>
@@ -117,70 +124,89 @@
 </header>
 
 <nav>
-  <a href="#about">About</a>
-  <a href="#research">Research</a>
-  <a href="#publications">Publications</a>
-  <a href="#presentations">Presentations</a>
-  <a href="#skills">Skills</a>
-  <a href="#contact">Contact</a>
+  <button onclick="toggleSection('about')">About</button>
+  <button onclick="toggleSection('research')">Research</button>
+  <button onclick="toggleSection('publications')">Publications</button>
+  <button onclick="toggleSection('presentations')">Presentations</button>
+  <button onclick="toggleSection('skills')">Skills</button>
+  <button onclick="toggleSection('contact')">Contact</button>
 </nav>
 
-<section id="about">
-  <h2>About Me</h2>
-  <p>I am a PhD student in Computational Biophysics at the Polish Academy of Sciences, Warsaw. My research focuses on molecular dynamics simulations of intrinsically disordered proteins and understanding biomolecular mechanisms through physics-based models.</p>
-</section>
+<div id="about" class="section">
+  <div class="section-content">
+    <h2>About Me</h2>
+    <p>I am a PhD student in Computational Biophysics at the Polish Academy of Sciences, Warsaw. My research focuses on molecular dynamics simulations of intrinsically disordered proteins and understanding biomolecular mechanisms through physics-based models.</p>
+  </div>
+</div>
 
-<section id="research">
-  <h2>Research Interests</h2>
-  <ul>
-    <li>Molecular Dynamics Simulations</li>
-    <li>Intrinsically Disordered Proteins</li>
-    <li>Computational Biophysics</li>
-    <li>Membrane Biophysics and Protein Interactions</li>
-  </ul>
-</section>
+<div id="research" class="section">
+  <div class="section-content">
+    <h2>Research Interests</h2>
+    <ul>
+      <li>Molecular Dynamics Simulations</li>
+      <li>Intrinsically Disordered Proteins</li>
+      <li>Computational Biophysics</li>
+      <li>Membrane Biophysics and Protein Interactions</li>
+    </ul>
+  </div>
+</div>
 
-<section id="publications">
-  <h2>Publications (Selected)</h2>
-  <ul>
-    <li><strong>2024</strong> — Galectin-3 conformational analysis, <em>Molecules</em> 29(12): 2768</li>
-    <li><strong>2024</strong> — Guide to MD Simulations, <em>Int. J. Mol. Sci</em> 25: 6698</li>
-    <li><strong>2023</strong> — Membrane curvature sensing, <em>Soft Matter</em> 19: 3723–3732</li>
-    <li><strong>2023</strong> — Lipid transport structure, <em>Cells</em> 12(15)</li>
-    <li><strong>2021</strong> — Magnetic response of Brownian particles, <em>IJAMTP</em> 7(1):10–15</li>
-  </ul>
-</section>
+<div id="publications" class="section">
+  <div class="section-content">
+    <h2>Publications (Selected)</h2>
+    <ul>
+      <li><strong>2024</strong> — Galectin-3 conformational analysis, <em>Molecules</em> 29(12): 2768</li>
+      <li><strong>2024</strong> — Guide to MD Simulations, <em>Int. J. Mol. Sci</em> 25: 6698</li>
+      <li><strong>2023</strong> — Membrane curvature sensing, <em>Soft Matter</em> 19: 3723–3732</li>
+      <li><strong>2023</strong> — Lipid transport structure, <em>Cells</em> 12(15)</li>
+      <li><strong>2021</strong> — Magnetic response of Brownian particles, <em>IJAMTP</em> 7(1):10–15</li>
+    </ul>
+  </div>
+</div>
 
-<section id="presentations">
-  <h2>Presentations & Conferences</h2>
-  <ul>
-    <li><strong>Oral:</strong> Galectin-3, UGM London 2024</li>
-    <li><strong>Poster:</strong> Membrane curvature sensing, ECMTB Toledo 2024</li>
-    <li><strong>Poster:</strong> CG MD of IDPs, Krakow 2023</li>
-    <li><strong>Poster:</strong> Alpha-synuclein aggregation, PTBF Warsaw 2022</li>
-    <li><strong>Participation:</strong> EMBO Symposium, ECMTB 2024, UGM 2024</li>
-  </ul>
-</section>
+<div id="presentations" class="section">
+  <div class="section-content">
+    <h2>Presentations & Conferences</h2>
+    <ul>
+      <li><strong>Oral:</strong> Galectin-3, UGM London 2024</li>
+      <li><strong>Poster:</strong> Membrane curvature sensing, ECMTB Toledo 2024</li>
+      <li><strong>Poster:</strong> CG MD of IDPs, Krakow 2023</li>
+      <li><strong>Poster:</strong> Alpha-synuclein aggregation, PTBF Warsaw 2022</li>
+      <li><strong>Participation:</strong> EMBO Symposium, ECMTB 2024, UGM 2024</li>
+    </ul>
+  </div>
+</div>
 
-<section id="skills">
-  <h2>Technical Skills</h2>
-  <ul>
-    <li><strong>Languages:</strong> Python, Bash</li>
-    <li><strong>Tools:</strong> Mathematica, Gnuplot, Origin, XMGrace</li>
-    <li><strong>MD Software:</strong> Gromacs, LAMMPS, NAMD, VMD, PyMOL</li>
-    <li><strong>Other:</strong> Linux systems, LaTeX, Tisean 3.0.1</li>
-  </ul>
-</section>
+<div id="skills" class="section">
+  <div class="section-content">
+    <h2>Technical Skills</h2>
+    <ul>
+      <li><strong>Languages:</strong> Python, Bash</li>
+      <li><strong>Tools:</strong> Mathematica, Gnuplot, Origin, XMGrace</li>
+      <li><strong>MD Software:</strong> Gromacs, LAMMPS, NAMD, VMD, PyMOL</li>
+      <li><strong>Other:</strong> Linux systems, LaTeX, Tisean 3.0.1</li>
+    </ul>
+  </div>
+</div>
 
-<section id="contact">
-  <h2>Contact</h2>
-  <p>Email: <a href="mailto:midhun@ifpan.edu.pl">midhun@ifpan.edu.pl</a></p>
-  <p>LinkedIn: <a href="https://www.linkedin.com/in/midhun-mohan-anila-8a959679/" target="_blank">View Profile</a></p>
-</section>
+<div id="contact" class="section">
+  <div class="section-content">
+    <h2>Contact</h2>
+    <p>Email: <a href="mailto:midhun@ifpan.edu.pl">midhun@ifpan.edu.pl</a></p>
+    <p>LinkedIn: <a href="https://www.linkedin.com/in/midhun-mohan-anila-8a959679/" target="_blank">View Profile</a></p>
+  </div>
+</div>
 
 <footer>
   <p>© 2025 Dr. Midhun Mohan Anila — All rights reserved.</p>
 </footer>
+
+<script>
+  function toggleSection(id) {
+    const section = document.getElementById(id);
+    section.classList.toggle("open");
+  }
+</script>
 
 </body>
 </html>
