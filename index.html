@@ -6,10 +6,10 @@
   <title>Midhun Mohan Anila | Biophysics Researcher</title>
 
   <!-- Font Awesome for icons -->
-  <link
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    rel="stylesheet"
-  />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital@1&family=Roboto:wght@300;500&display=swap" rel="stylesheet">
 
   <style>
     html {
@@ -18,13 +18,21 @@
 
     body {
       margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(to right, #e0f7fa, #ffffff);
+      font-family: 'Roboto', sans-serif;
+      background: linear-gradient(135deg, #e0f7fa, #fff0f5, #fce4ec);
+      background-size: 400% 400%;
+      animation: gradientFlow 15s ease infinite;
       color: #333;
     }
 
+    @keyframes gradientFlow {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
     header {
-      background: linear-gradient(to right, #004d66, #00789c);
+      background: linear-gradient(to right, #004d66, #00789c, #00897b);
       color: white;
       padding: 3rem 1rem 2rem;
       text-align: center;
@@ -42,10 +50,17 @@
     }
 
     .intro-text {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
       font-size: 1.3rem;
-      font-weight: 300;
-      margin-top: 1rem;
       line-height: 1.6;
+      max-width: 800px;
+      margin: 1.5rem auto;
+    }
+
+    .intro-text span {
+      display: block;
+      margin: 0.3em 0;
     }
 
     .quote {
@@ -69,7 +84,7 @@
       justify-content: center;
       flex-wrap: wrap;
       background: #00789c;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     }
 
     nav button {
@@ -85,7 +100,7 @@
 
     nav button:hover {
       background: #005f7f;
-      transform: scale(1.05);
+      transform: scale(1.08);
     }
 
     .section {
@@ -101,11 +116,20 @@
     .section-content {
       display: none;
       padding: 30px 25px;
-      animation: fadeIn 0.6s ease-in;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: slideFade 0.6s forwards;
     }
 
     .section.open .section-content {
       display: block;
+    }
+
+    @keyframes slideFade {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     h1 {
@@ -152,11 +176,6 @@
       margin-top: 50px;
     }
 
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(10px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
     @media screen and (max-width: 600px) {
       nav button {
         padding: 0.7rem;
@@ -182,7 +201,13 @@
 
 <header>
   <h1>Midhun Mohan Anila</h1>
-  <p class="intro-text">I’m Midhun, a PhD candidate in Computational Biophysics at the Institute of Physics, Polish Academy of Sciences, Warsaw, working under the supervision of Dr. hab. Bartosz Różycki.</p>
+  <div class="intro-text">
+    <span>I’m Midhun,</span>
+    <span>a passionate PhD researcher in Computational Biophysics,</span>
+    <span>at the Institute of Physics, Polish Academy of Sciences, Warsaw.</span>
+    <span>I work under the guidance of Dr. hab. Bartosz Różycki,</span>
+    <span>exploring the mysteries of disordered proteins through simulations.</span>
+  </div>
   <img src="profile.jpg" alt="Midhun's Photo" />
   <div class="quote">
     Nothing in life is to be feared, it is only to be understood. Now is the time to understand more, so that we may fear less. — Marie Curie
@@ -203,6 +228,8 @@
   <button onclick="toggleSection('skills')">Skills</button>
   <button onclick="toggleSection('contact')">Contact</button>
 </nav>
+
+<!-- Sections remain unchanged -->
 
 <div id="about" class="section">
   <div class="section-content">
@@ -277,10 +304,15 @@
   function toggleSection(id) {
     const sections = document.querySelectorAll(".section");
     sections.forEach((section) => {
+      const content = section.querySelector('.section-content');
       if (section.id === id) {
         section.classList.toggle("open");
+        if (section.classList.contains('open')) {
+          content.style.animation = 'slideFade 0.6s forwards';
+        }
       } else {
         section.classList.remove("open");
+        content.style.animation = 'none';
       }
     });
   }
