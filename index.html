@@ -15,6 +15,7 @@
     html {
       scroll-behavior: smooth;
     }
+
     body {
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
@@ -38,6 +39,29 @@
       object-fit: cover;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
       margin-top: 1rem;
+    }
+
+    .intro-text {
+      font-size: 1.3rem;
+      font-weight: 300;
+      margin-top: 1rem;
+      line-height: 1.6;
+    }
+
+    .quote {
+      margin-top: 2rem;
+      font-style: italic;
+      font-size: 1.1rem;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+      color: #dbeeff;
+    }
+
+    .quote::before, .quote::after {
+      content: "“";
+      font-size: 2rem;
+      color: #ffeb3b;
     }
 
     nav {
@@ -84,8 +108,10 @@
       display: block;
     }
 
-    h1, h2 {
+    h1 {
       margin: 0.5em 0;
+      font-size: 2.2rem;
+      letter-spacing: 1px;
     }
 
     h2 {
@@ -141,6 +167,14 @@
         width: 100px;
         height: 100px;
       }
+
+      .intro-text {
+        font-size: 1.1rem;
+      }
+
+      .quote {
+        font-size: 1rem;
+      }
     }
   </style>
 </head>
@@ -148,12 +182,12 @@
 
 <header>
   <h1>Midhun Mohan Anila</h1>
-  <p>PhD Student in Computational Biophysics<br>Institute of Physics, Polish Academy of Sciences, Warsaw</p>
+  <p class="intro-text">I’m Midhun, a PhD candidate in Computational Biophysics at the Institute of Physics, Polish Academy of Sciences, Warsaw, working under the supervision of Dr. hab. Bartosz Różycki.</p>
   <img src="profile.jpg" alt="Midhun's Photo" />
-  <p style="margin-top: 1rem;">
-    Supervisor: Dr. hab. Bartosz Różycki
-  </p>
-  <div class="icon-links">
+  <div class="quote">
+    Nothing in life is to be feared, it is only to be understood. Now is the time to understand more, so that we may fear less. — Marie Curie
+  </div>
+  <div class="icon-links" style="margin-top: 1.5rem;">
     <a href="mailto:midhun@ifpan.edu.pl" title="Email"><i class="fas fa-envelope"></i></a>
     <a href="https://www.linkedin.com/in/midhun-mohan-anila-8a959679/" title="LinkedIn" target="_blank"><i class="fab fa-linkedin"></i></a>
     <a href="https://scholar.google.pl/citations?user=7EmEQ7YAAAAJ&hl=en" title="Google Scholar" target="_blank"><i class="fas fa-graduation-cap"></i></a>
