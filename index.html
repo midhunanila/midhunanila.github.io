@@ -2,151 +2,397 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Profile Page</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Midhun Mohan Anila | Biophysics Researcher</title>
+
+  <!-- Font Awesome for icons -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital@1&family=Roboto:wght@300;500&display=swap" rel="stylesheet">
+
   <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background: url('your-background.jpg') no-repeat center center fixed;
+      font-family: 'Roboto', sans-serif;
+      background: url('disordered.jpeg') no-repeat center center fixed;
       background-size: cover;
+      color: #333;
+      backdrop-filter: brightness(1) saturate(1.2);
+      padding: 0;
     }
+
 
     header {
-      padding: 1em;
-      background-color: rgba(255, 255, 255, 0.9);
+      background: linear-gradient(to right, #004d66, #00789c, #00897b);
+      color: white;
+      padding: 2rem 1rem;
       display: flex;
       align-items: center;
-      justify-content: space-between;
+      justify-content: center;
       flex-wrap: wrap;
+      gap: 2rem;
+      text-align: left;
     }
 
-    .profile {
+    .profile-img-container {
+      flex-shrink: 0;
       display: flex;
-      align-items: center;
-      width: 100%;
+      justify-content: center;
     }
 
-    .profile-pic {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      margin-right: 20px;
+    header img {
+      width: 140px;
+      height: 140px;
+      border-radius: 20px;
+      border: 3px solid #fff;
       object-fit: cover;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
-    .profile-info {
-      flex-grow: 1;
+    header img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
     }
 
-    .profile-info h1 {
-      margin: 0;
-      font-size: 2em;
+    .intro-container {
+      max-width: 600px;
     }
 
-    .profile-info p {
-      margin: 5px 0 0 0;
-      font-size: 1.1em;
+    .intro-text {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 1.3rem;
+      line-height: 1.6;
+      margin-top: 0.5rem;
+    }
+
+    .intro-text span {
+      display: block;
+      margin: 0.3em 0;
+    }
+
+    .quote {
+      margin-top: 1rem;
+      font-style: italic;
+      font-size: 1.1rem;
+      color: #dbeeff;
+    }
+
+    .quote::before, .quote::after {
+      content: "“";
+      font-size: 2rem;
+      color: #ffeb3b;
     }
 
     nav {
-      text-align: center;
-      margin-top: 1em;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      background: #00789c;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     }
 
-    .nav-button {
-      margin: 0 1em;
-      padding: 0.5em 1.5em;
-      font-size: 1em;
-      cursor: pointer;
+    nav button {
+      background: none;
       border: none;
-      background-color: #333;
       color: white;
-      border-radius: 5px;
-      transition: background 0.3s;
+      font-weight: bold;
+      padding: 1rem 1.5rem;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: background 0.3s, transform 0.2s;
+      border-radius: 999px;
+      margin: 0.3rem;
+      background-color: rgba(255, 255, 255, 0.1);
     }
 
-    .nav-button:hover {
-      background-color: #555;
+    nav button:hover {
+      background: #005f7f;
+      transform: scale(1.08);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     }
 
     .section {
+        display: none;
+        position: absolute;
+        top: 120px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 85%;
+        max-width: 850px;
+        background-color: white;
+        color: black;
+        padding: 2em;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+        border-radius: 12px;
+        z-index: 10;
+      }
+
+
+    .section-content {
       display: none;
-      position: absolute;
-      top: 160px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 85%;
-      max-width: 850px;
-      background-color: white;
-      color: black;
-      padding: 2em;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
-      border-radius: 12px;
-      z-index: 10;
+      padding: 30px 25px;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: slideFade 0.6s forwards;
+    }
+
+    .section.open .section-content {
+      display: block;
+    }
+
+    @keyframes slideFade {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 2.2rem;
+      letter-spacing: 1px;
+    }
+
+    h2 {
+      color: #004d66;
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    ul {
+      padding-left: 1.5rem;
+    }
+
+    a {
+      color: #00789c;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .icon-links a {
+      margin: 0 0.5rem;
+      color: white;
+      font-size: 1.5rem;
+      transition: color 0.3s;
+    }
+
+    .icon-links a:hover {
+      color: #ffd700;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      background: #004d66;
+      color: white;
+      margin-top: 50px;
     }
 
     @media screen and (max-width: 768px) {
-      .profile {
+      header {
         flex-direction: column;
-        align-items: center;
-      }
-      .profile-pic {
-        margin-right: 0;
-        margin-bottom: 10px;
-      }
-      .profile-info {
         text-align: center;
+        padding: 2rem 1rem;
+      }
+
+      .intro-container {
+        max-width: 90%;
+      }
+
+      header img {
+        width: 120px;
+        height: 120px;
+      }
+
+      nav button {
+        padding: 0.7rem;
+        font-size: 14px;
+      }
+
+      .intro-text {
+        font-size: 1.1rem;
+      }
+
+      .quote {
+        font-size: 1rem;
       }
     }
   </style>
 </head>
+
 <body>
+  
 
   <header>
-    <div class="profile">
-      <img src="your-profile-pic.jpg" alt="Profile Picture" class="profile-pic" />
-      <div class="profile-info">
-        <h1>Your Name</h1>
-        <p>Your Title or Short Bio Here</p>
+    <div class="profile-img-container">
+      <img src="profile.jpg" alt="Midhun's Photo" />
+    </div>
+    <div class="intro-container">
+      <h1>Midhun Mohan Anila</h1>
+      <div class="intro-text">
+        <span>I’m Midhun,</span>
+        <span>a passionate PhD researcher in Theoretical Biophysics,</span>
+        <span>at the Institute of Physics, Polish Academy of Sciences, Warsaw.</span>
+        <span>I work under the guidance of 
+          <a href="https://sites.google.com/view/bartosz-rozycki-biomembranes/bartosz-r%C3%B3%C5%BCycki" target="_blank" style="color: #ffeb3b; text-decoration: underline;">
+            Dr. hab. Bartosz Różycki
+          </a>,
+        </span>
+        <span>exploring the mysteries of disordered proteins through simulations.</span>
+      </div>
+      <div class="quote">
+        Nothing in life is to be feared, it is only to be understood. Now is the time to understand more, so that we may fear less. — Marie Curie
+      </div>
+      <div class="icon-links" style="margin-top: 1.5rem;">
+        <a href="mailto:midhun@ifpan.edu.pl" title="Email"><i class="fas fa-envelope"></i></a>
+        <a href="https://www.linkedin.com/in/midhun-mohan-anila-8a959679/" title="LinkedIn" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="https://scholar.google.pl/citations?user=7EmEQ7YAAAAJ&hl=en" title="Google Scholar" target="_blank"><i class="fas fa-graduation-cap"></i></a>
+        <a href="https://orcid.org/0000-0002-8084-6828" title="ORCID" target="_blank"><i class="fab fa-orcid"></i></a>
       </div>
     </div>
-    <nav>
-      <button class="nav-button" onclick="toggleSection('about')">About</button>
-      <button class="nav-button" onclick="toggleSection('research')">Research</button>
-      <button class="nav-button" onclick="toggleSection('publications')">Publications</button>
-      <button class="nav-button" onclick="toggleSection('contact')">Contact</button>
-    </nav>
   </header>
 
+  <nav>
+    <button onclick="toggleSection('about')">About</button>
+    <button onclick="toggleSection('research')">Research</button>
+    <button onclick="toggleSection('publications')">Publications</button>
+    <button onclick="toggleSection('presentations')">Presentations</button>
+    <button onclick="toggleSection('awards')">Awards</button>
+    <button onclick="toggleSection('skills')">Skills</button>
+    <button onclick="toggleSection('contact')">Contact</button>
+  </nav>
+
   <div id="about" class="section">
+  <div class="section-content">
     <h2>About Me</h2>
-    <p>This is the about section. Add your personal background and interests here.</p>
+    <p>I am a PhD candidate specializing in Computational Biophysics at the Polish Academy of Sciences. My work focuses on molecular dynamics simulations of intrinsically disordered proteins (IDPs), exploring complex biomolecular mechanisms using physics-based approaches.</p>
   </div>
+</div>
 
-  <div id="research" class="section">
-    <h2>Research</h2>
-    <p>This is the research section. Describe your research focus and projects.</p>
+<div id="research" class="section">
+  <div class="section-content">
+    <h2>Research Interests</h2>
+    <ul>
+      <li>Molecular Dynamics Simulations</li>
+      <li>Intrinsically Disordered Proteins</li>
+      <li>Membrane Biophysics & Protein Interactions</li>
+      <li>Coarse-Grained Modeling & IDP Aggregation</li>
+    </ul>
   </div>
+</div>
 
-  <div id="publications" class="section">
-    <h2>Publications</h2>
-    <p>This is the publications section. List your academic papers or books.</p>
+<div id="publications" class="section">
+  <div class="section-content">
+    <h2>Selected Publications</h2>
+     <ul>
+  <li><strong>2025</strong> — <a href="https://dx.doi.org/10.2174/0113892037360348250528003832" target="_blank">
+    Clustering‑based Method for Constructing the Phase Diagram of the van der Waals Model Fluid
+  </a>, <em>Current Protein &amp; Peptide Science</em> 26(10): 896–905</li>
+  <li><strong>2024</strong> — <a href="https://doi.org/10.3390/molecules29122768" target="_blank">
+    Scrutinising the Conformational Ensemble of the Intrinsically Mixed-Folded Protein Galectin-3
+  </a>, <em>Molecules</em> 29(12): 2768</li>
+  <li><strong>2024</strong> — <a href="https://doi.org/10.3390/ijms25126698" target="_blank">
+   A Practical Guide to All-Atom and Coarse-Grained Molecular Dynamics Simulations Using Amber and Gromacs: A Case Study of Disulfide-Bond Impact on the Intrinsically Disordered Amyloid Beta 
+  </a>, <em>Int. J. Mol. Sci</em> 25: 6698</li>
+  <li><strong>2023</strong> — <a href="https://doi.org/10.1039/D3SM00131H" target="_blank">
+    Membrane curvature sensing by model biomolecular condensates
+  </a>, <em>Soft Matter</em> 19: 3723–3732</li>
+  <li><strong>2023</strong> — <a href="https://doi.org/10.3390/cells12151974" target="_blank">
+    Crystal structure of the ORP8 lipid transport ORD domain: model of lipid transport
+  </a>, <em>Cells</em> 12(15)</li>
+  <li><strong>2021</strong> — <a href="https://doi.org/10.11648/j.ijamtp.20210701.12" target="_blank">
+    Magnetic Response of a Charged Brownian Particle Under the Action of Two AC Drive
+  </a>, <em>IJAMTP</em> 7(1): 10–15</li>
+</ul>
+
   </div>
+</div>
 
-  <div id="contact" class="section">
+<div id="presentations" class="section">
+  <div class="section-content">
+    <h2>Presentations & Conferences</h2>
+    <ul>
+      <li><strong>Oral:</strong> Membrane curvature sensing, CECAM Darmstadt 2024</li>
+      <li><strong>Oral and Poster:</strong> Galectin-3, UGM London 2024</li>
+      <li><strong>Poster:</strong> Membrane curvature sensing, ECMTB Toledo 2024</li>
+      <li><strong>Poster:</strong> CG MD of IDPs, Krakow 2023</li>
+      <li><strong>Poster:</strong> Alpha-synuclein aggregation, PTBF Warsaw 2022</li>
+      <li><strong>Participation:</strong> EMBO Symposium, ECMTB 2024, UGM 2024</li>
+    </ul>
+  </div>
+</div>
+
+<div id="skills" class="section">
+  <div class="section-content">
+    <h2>Technical Skills</h2>
+    <ul>
+      <li><strong>Languages:</strong> Python, Bash</li>
+      <li><strong>Tools:</strong> Mathematica, Gnuplot, Origin, XMGrace</li>
+      <li><strong>Simulation Packages:</strong></li>
+      <ul style="margin-top: 0.5em; margin-bottom: 1em; padding-left: 1.5rem;">
+        <li>Gromacs</li>
+        <li>NAMD</li>
+        <li>LAMMPS</li>
+      </ul>
+      <li><strong>Visualization & Analysis:</strong> VMD, PyMOL</li>
+      <li><strong>Other:</strong> Linux systems, LaTeX, Tisean 3.0.1</li>
+      <li><strong>Code Repositories:</strong> Updating soon...</li>
+    </ul>
+  </div>
+</div>
+
+<div id="contact" class="section">
+  <div class="section-content">
     <h2>Contact</h2>
-    <p>Email: your.email@example.com<br>LinkedIn: yourprofile</p>
+    <p><strong>Email:</strong> <a href="mailto:midhun@ifpan.edu.pl">midhun@ifpan.edu.pl</a></p>
+    <p><strong>Phone:</strong> +48 739 428 560</p>
+    <p><strong>Affiliation:</strong><br />
+      Institute of Physics, Polish Academy of Sciences<br />
+      Aleja Lotników 32/46, 02-668, Warsaw, Poland
+    </p>
   </div>
+</div>
+
+<div id="awards" class="section">
+  <div class="section-content">
+    <h2>Awards & Recognition</h2>
+    <ul>
+      <li><strong>2022:</strong> Best Poster Award — <em>PTBF Conference</em>, Warsaw</li>
+    </ul>
+  </div>
+</div>
+
+
+  <footer>
+    <p>© 2025 Midhun Mohan Anila — All rights reserved.</p>
+  </footer>
 
   <script>
     function toggleSection(id) {
-      const sections = document.querySelectorAll('.section');
-      sections.forEach(section => {
-        section.style.display = (section.id === id && section.style.display !== 'block') ? 'block' : 'none';
+      const sections = document.querySelectorAll(".section");
+      sections.forEach((section) => {
+        const content = section.querySelector('.section-content');
+        if (section.id === id) {
+          section.classList.toggle("open");
+          if (section.classList.contains('open')) {
+            content.style.animation = 'slideFade 0.6s forwards';
+          }
+        } else {
+          section.classList.remove("open");
+          content.style.animation = 'none';
+        }
       });
     }
   </script>
-
 </body>
 </html>
