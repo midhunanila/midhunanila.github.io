@@ -46,14 +46,22 @@
     }
 
     header img {
-      width: 140px;
-      height: 140px;
-      border-radius: 20px;
+      width: 180px;       /* increased from 140px */
+      height: 180px;      /* increased from 140px */
+      border-radius: 50%; /* changed from 20px to 50% for perfect circle */
       border: 3px solid #fff;
       object-fit: cover;
       box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
+
+@media screen and (max-width: 768px) {
+  header img {
+    width: 140px;   /* increased from 120px */
+    height: 140px;  /* increased from 120px */
+  }
+}
+
 
     header img:hover {
       transform: scale(1.05);
