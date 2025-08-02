@@ -127,24 +127,27 @@
     }
 
     .section {
-        display: none;
-        position: absolute;
-        top: 120px;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 85%;
-        max-width: 850px;
-        background-color: white;
-        color: black;
-        padding: 2em;
-        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
-        border-radius: 12px;
-        z-index: 10;
-      }
-
-
-    .section-content {
       display: none;
+      position: absolute;
+      top: 120px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 85%;
+      max-width: 850px;
+      background-color: white;
+      color: black;
+      padding: 2em;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+      border-radius: 12px;
+      z-index: 10;
+    }
+    
+    .section.open {
+      display: block;  /* <-- Add this */
+    }
+    
+    .section-content {
+      /* Remove display:none from here */
       padding: 30px 25px;
       opacity: 0;
       transform: translateY(20px);
@@ -152,8 +155,10 @@
     }
 
     .section.open .section-content {
-      display: block;
+      opacity: 1;
+      transform: translateY(0);
     }
+
 
     @keyframes slideFade {
       to {
@@ -387,20 +392,16 @@
 
   <script>
     function toggleSection(id) {
-      const sections = document.querySelectorAll(".section");
-      sections.forEach((section) => {
-        const content = section.querySelector('.section-content');
-        if (section.id === id) {
-          section.classList.toggle("open");
-          if (section.classList.contains('open')) {
-            content.style.animation = 'slideFade 0.6s forwards';
+        const sections = document.querySelectorAll(".section");
+        sections.forEach((section) => {
+          if (section.id === id) {
+            section.classList.toggle("open");
+          } else {
+            section.classList.remove("open");
           }
-        } else {
-          section.classList.remove("open");
-          content.style.animation = 'none';
-        }
-      });
-    }
+        });
+      }
+
   </script>
 </body>
 </html>
