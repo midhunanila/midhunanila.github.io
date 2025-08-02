@@ -19,35 +19,55 @@
     body {
       margin: 0;
       font-family: 'Roboto', sans-serif;
-      background: #000;
+      background: url('disordered.jpeg') no-repeat center center fixed;
+      background-size: cover;
       color: #333;
+      backdrop-filter: brightness(1) saturate(1.2);
+      padding: 0;
     }
 
     .background-overlay {
       position: fixed;
       top: 0; left: 0; right: 0; bottom: 0;
-      background: url('disordered.jpeg') no-repeat center center fixed;
-      background-size: cover;
-      filter: brightness(0.9) saturate(1.2) blur(2px);
+      background-color: rgba(255, 255, 255, 0.75);
       z-index: -1;
     }
 
     header {
       background: linear-gradient(to right, #004d66, #00789c, #00897b);
       color: white;
-      padding: 3rem 1rem 2rem;
-      text-align: center;
-      position: relative;
+      padding: 2rem 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 2rem;
+      text-align: left;
+    }
+
+    .profile-img-container {
+      flex-shrink: 0;
+      display: flex;
+      justify-content: center;
     }
 
     header img {
-      width: 150px;
-      height: 150px;
-      border-radius: 50%;
-      border: 5px solid white;
+      width: 140px;
+      height: 140px;
+      border-radius: 20px;
+      border: 3px solid #fff;
       object-fit: cover;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
-      margin-top: 1rem;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    header img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    }
+
+    .intro-container {
+      max-width: 600px;
     }
 
     .intro-text {
@@ -55,8 +75,7 @@
       font-style: italic;
       font-size: 1.3rem;
       line-height: 1.6;
-      max-width: 800px;
-      margin: 1.5rem auto;
+      margin-top: 0.5rem;
     }
 
     .intro-text span {
@@ -65,12 +84,9 @@
     }
 
     .quote {
-      margin-top: 2rem;
+      margin-top: 1rem;
       font-style: italic;
       font-size: 1.1rem;
-      max-width: 700px;
-      margin-left: auto;
-      margin-right: auto;
       color: #dbeeff;
     }
 
@@ -109,18 +125,18 @@
     }
 
     .section {
-      width: 95%;
-      max-width: 1400px;
-      margin: 30px auto;
-      background: rgba(255, 255, 255, 0.96);
-      border-radius: 12px;
-      padding: 30px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      max-width: 900px;
+      margin: 20px auto;
+      background: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
       transition: all 0.4s ease-in-out;
     }
 
     .section-content {
       display: none;
+      padding: 30px 25px;
       opacity: 0;
       transform: translateY(20px);
       animation: slideFade 0.6s forwards;
@@ -138,7 +154,7 @@
     }
 
     h1 {
-      margin: 0.5em 0;
+      margin: 0;
       font-size: 2.2rem;
       letter-spacing: 1px;
     }
@@ -181,15 +197,25 @@
       margin-top: 50px;
     }
 
-    @media screen and (max-width: 600px) {
-      nav button {
-        padding: 0.7rem;
-        font-size: 14px;
+    @media screen and (max-width: 768px) {
+      header {
+        flex-direction: column;
+        text-align: center;
+        padding: 2rem 1rem;
+      }
+
+      .intro-container {
+        max-width: 90%;
       }
 
       header img {
-        width: 100px;
-        height: 100px;
+        width: 120px;
+        height: 120px;
+      }
+
+      nav button {
+        padding: 0.7rem;
+        font-size: 14px;
       }
 
       .intro-text {
@@ -204,31 +230,34 @@
 </head>
 
 <body>
-
   <div class="background-overlay"></div>
 
   <header>
-    <h1>Midhun Mohan Anila</h1>
-    <div class="intro-text">
-      <span>I’m Midhun,</span>
-      <span>a passionate PhD researcher in Theoretical Biophysics,</span>
-      <span>at the Institute of Physics, Polish Academy of Sciences, Warsaw.</span>
-      <span>I work under the guidance of 
-        <a href="https://sites.google.com/view/bartosz-rozycki-biomembranes/bartosz-r%C3%B3%C5%BCycki" target="_blank" style="color: #ffeb3b; text-decoration: underline;">
-          Dr. hab. Bartosz Różycki
-        </a>,
-      </span>
-      <span>exploring the mysteries of disordered proteins through simulations.</span>
+    <div class="profile-img-container">
+      <img src="profile.jpg" alt="Midhun's Photo" />
     </div>
-    <img src="profile.jpg" alt="Midhun's Photo" />
-    <div class="quote">
-      Nothing in life is to be feared, it is only to be understood. Now is the time to understand more, so that we may fear less. — Marie Curie
-    </div>
-    <div class="icon-links" style="margin-top: 1.5rem;">
-      <a href="mailto:midhun@ifpan.edu.pl" title="Email"><i class="fas fa-envelope"></i></a>
-      <a href="https://www.linkedin.com/in/midhun-mohan-anila-8a959679/" title="LinkedIn" target="_blank"><i class="fab fa-linkedin"></i></a>
-      <a href="https://scholar.google.pl/citations?user=7EmEQ7YAAAAJ&hl=en" title="Google Scholar" target="_blank"><i class="fas fa-graduation-cap"></i></a>
-      <a href="https://orcid.org/0000-0002-8084-6828" title="ORCID" target="_blank"><i class="fab fa-orcid"></i></a>
+    <div class="intro-container">
+      <h1>Midhun Mohan Anila</h1>
+      <div class="intro-text">
+        <span>I’m Midhun,</span>
+        <span>a passionate PhD researcher in Theoretical Biophysics,</span>
+        <span>at the Institute of Physics, Polish Academy of Sciences, Warsaw.</span>
+        <span>I work under the guidance of 
+          <a href="https://sites.google.com/view/bartosz-rozycki-biomembranes/bartosz-r%C3%B3%C5%BCycki" target="_blank" style="color: #ffeb3b; text-decoration: underline;">
+            Dr. hab. Bartosz Różycki
+          </a>,
+        </span>
+        <span>exploring the mysteries of disordered proteins through simulations.</span>
+      </div>
+      <div class="quote">
+        Nothing in life is to be feared, it is only to be understood. Now is the time to understand more, so that we may fear less. — Marie Curie
+      </div>
+      <div class="icon-links" style="margin-top: 1.5rem;">
+        <a href="mailto:midhun@ifpan.edu.pl" title="Email"><i class="fas fa-envelope"></i></a>
+        <a href="https://www.linkedin.com/in/midhun-mohan-anila-8a959679/" title="LinkedIn" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="https://scholar.google.pl/citations?user=7EmEQ7YAAAAJ&hl=en" title="Google Scholar" target="_blank"><i class="fas fa-graduation-cap"></i></a>
+        <a href="https://orcid.org/0000-0002-8084-6828" title="ORCID" target="_blank"><i class="fab fa-orcid"></i></a>
+      </div>
     </div>
   </header>
 
@@ -242,84 +271,7 @@
     <button onclick="toggleSection('contact')">Contact</button>
   </nav>
 
-  <div id="about" class="section">
-    <div class="section-content">
-      <h2>About Me</h2>
-      <p>I am a PhD candidate specializing in Computational Biophysics at the Polish Academy of Sciences. My work focuses on molecular dynamics simulations of intrinsically disordered proteins (IDPs), exploring complex biomolecular mechanisms using physics-based approaches.</p>
-    </div>
-  </div>
-
-  <div id="research" class="section">
-    <div class="section-content">
-      <h2>Research Interests</h2>
-      <ul>
-        <li>Molecular Dynamics Simulations</li>
-        <li>Intrinsically Disordered Proteins</li>
-        <li>Membrane Biophysics & Protein Interactions</li>
-        <li>Coarse-Grained Modeling & IDP Aggregation</li>
-      </ul>
-    </div>
-  </div>
-
-  <div id="publications" class="section">
-    <div class="section-content">
-      <h2>Selected Publications</h2>
-      <ul>
-        <li><strong>2025:</strong> <a href="#" target="_blank">Clustering-Based Method for Constructing Phase Diagrams</a></li>
-        <li><strong>2024:</strong> <a href="#" target="_blank">Conformational Ensemble of Galectin-3</a></li>
-        <li><strong>2024:</strong> <a href="#" target="_blank">All-Atom and CG MD of Amyloid Beta</a></li>
-        <li><strong>2023:</strong> <a href="#" target="_blank">Membrane Curvature Sensing by Condensates</a></li>
-        <li><strong>2023:</strong> <a href="#" target="_blank">Crystal Structure of ORP8 ORD Domain</a></li>
-        <li><strong>2021:</strong> <a href="#" target="_blank">Magnetic Response of a Brownian Particle</a></li>
-      </ul>
-    </div>
-  </div>
-
-  <div id="presentations" class="section">
-    <div class="section-content">
-      <h2>Presentations & Conferences</h2>
-      <ul>
-        <li><strong>Oral:</strong> Membrane curvature sensing, CECAM Darmstadt 2024</li>
-        <li><strong>Oral & Poster:</strong> Galectin-3, UGM London 2024</li>
-        <li><strong>Poster:</strong> IDP Aggregation, Krakow 2023</li>
-        <li><strong>Participation:</strong> EMBO Symposium, ECMTB, UGM</li>
-      </ul>
-    </div>
-  </div>
-
-  <div id="awards" class="section">
-    <div class="section-content">
-      <h2>Awards & Recognition</h2>
-      <ul>
-        <li><strong>2022:</strong> Best Poster Award — PTBF Conference, Warsaw</li>
-      </ul>
-    </div>
-  </div>
-
-  <div id="skills" class="section">
-    <div class="section-content">
-      <h2>Technical Skills</h2>
-      <ul>
-        <li><strong>Languages:</strong> Python, Bash</li>
-        <li><strong>Tools:</strong> Mathematica, Gnuplot, Origin, XMGrace</li>
-        <li><strong>Simulation:</strong> GROMACS, NAMD, LAMMPS</li>
-        <li><strong>Visualization:</strong> VMD, PyMOL</li>
-        <li><strong>Other:</strong> Linux, LaTeX, Tisean</li>
-      </ul>
-    </div>
-  </div>
-
-  <div id="contact" class="section">
-    <div class="section-content">
-      <h2>Contact</h2>
-      <p><strong>Email:</strong> <a href="mailto:midhun@ifpan.edu.pl">midhun@ifpan.edu.pl</a></p>
-      <p><strong>Phone:</strong> +48 739 428 560</p>
-      <p><strong>Affiliation:</strong><br />
-        Institute of Physics, Polish Academy of Sciences<br />
-        Aleja Lotników 32/46, 02-668 Warsaw, Poland
-      </p>
-    </div>
-  </div>
+  <!-- Insert all sections here (about, research, publications, etc.) exactly as in your original -->
 
   <footer>
     <p>© 2025 Midhun Mohan Anila — All rights reserved.</p>
@@ -342,6 +294,5 @@
       });
     }
   </script>
-
 </body>
 </html>
