@@ -282,13 +282,16 @@
           .icon-links a {
             margin-right: 10px;
             font-size: 20px; /* Font Awesome icon size */
-            transition: filter 0.3s;
+            cursor: pointer;
+            display: inline-block;           /* needed for transform */
+            transition: transform 03.s ease;
             color: #fff;      /* icon color */
           }
       
           .icon-links i {
             font-size: 20px;
             vertical-align: middle;
+            transition: filter 0.3s, inherit;
           }
       
           .icon-links img {
