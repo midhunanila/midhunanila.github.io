@@ -4,18 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Midhun Mohan Anila | Biophysics Researcher</title>
-
-  <!-- Font Awesome for icons -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
-
-  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital@1&family=Roboto:wght@300;500&display=swap" rel="stylesheet">
-
   <style>
-    html {
-      scroll-behavior: smooth;
-    }
-
+    html { scroll-behavior: smooth; }
     body {
       margin: 0;
       font-family: 'Roboto', sans-serif;
@@ -25,8 +17,6 @@
       backdrop-filter: brightness(1) saturate(1.2);
       padding: 0;
     }
-
-
     header {
       background: linear-gradient(to right, #004d66, #00789c, #00897b);
       color: white;
@@ -38,40 +28,24 @@
       gap: 2rem;
       text-align: left;
     }
-
-    .profile-img-container {
-      flex-shrink: 0;
-      display: flex;
-      justify-content: center;
-    }
-
+    .profile-img-container { flex-shrink: 0; display: flex; justify-content: center; }
     header img {
-      width: 180px;       /* increased from 140px */
-      height: 180px;      /* increased from 140px */
-      border-radius: 50%; /* changed from 20px to 50% for perfect circle */
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
       border: 3px solid #fff;
       object-fit: cover;
       box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
-
-@media screen and (max-width: 768px) {
-  header img {
-    width: 140px;   /* increased from 120px */
-    height: 140px;  /* increased from 120px */
-  }
-}
-
-
+    @media screen and (max-width: 768px) {
+      header img { width: 140px; height: 140px; }
+    }
     header img:hover {
       transform: scale(1.05);
       box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
     }
-
-    .intro-container {
-      max-width: 600px;
-    }
-
+    .intro-container { max-width: 600px; }
     .intro-text {
       font-family: 'Playfair Display', serif;
       font-style: italic;
@@ -79,25 +53,18 @@
       line-height: 1.8;
       margin-top: 0.5rem;
     }
-
-    .intro-text span {
-      display: block;
-      margin: 0.3em 0;
-    }
-
+    .intro-text span { display: block; margin: 0.3em 0; }
     .quote {
       margin-top: 1rem;
       font-style: italic;
       font-size: 1.1rem;
       color: #dbeeff;
     }
-
     .quote::before, .quote::after {
       content: "“";
       font-size: 2rem;
       color: #ffeb3b;
     }
-
     nav {
       display: flex;
       justify-content: center;
@@ -105,7 +72,6 @@
       background: #00789c;
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     }
-
     nav button {
       background: none;
       border: none;
@@ -119,101 +85,59 @@
       margin: 0.3rem;
       background-color: rgba(255, 255, 255, 0.1);
     }
-
     nav button:hover {
       background: #005f7f;
       transform: scale(1.08);
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     }
-
     .section {
-        display: none;       /* hidden by default */
-        width: 600px;        /* fixed width for nice centered box */
-        max-width: 90vw;     /* responsive max width */
-        margin: 1rem auto;   /* auto left/right margin to center */
-        background-color: white;
-        color: black;
-        padding: 2em;
-        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
-        border-radius: 12px;
-        z-index: 1;
-        /* no absolute positioning */
-      }
-      
-      .section.open {
-        display: block;
-        animation: slideDown 0.4s ease forwards;
-      }
-
-@keyframes slideDown {
-  from {
-    opacity: 0;
-    transform: translateY(-20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-    
+      display: none;
+      width: 600px;
+      max-width: 90vw;
+      margin: 1rem auto;
+      background-color: white;
+      color: black;
+      padding: 2em;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+      border-radius: 12px;
+      z-index: 1;
+    }
+    .section.open {
+      display: block;
+      animation: slideDown 0.4s ease forwards;
+    }
+    @keyframes slideDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
     .section-content {
-      /* Remove display:none from here */
       padding: 30px 25px;
       opacity: 0;
       transform: translateY(20px);
       animation: slideFade 0.6s forwards;
     }
-
     .section.open .section-content {
       opacity: 1;
       transform: translateY(0);
     }
-
-
     @keyframes slideFade {
       to {
         opacity: 1;
         transform: translateY(0);
       }
     }
-
-    h1 {
-      margin: 0;
-      font-size: 2.2rem;
-      letter-spacing: 1px;
-    }
-
-    h2 {
-      color: #004d66;
-      font-size: 1.5rem;
-      margin-bottom: 1rem;
-    }
-
-    ul {
-      padding-left: 1.5rem;
-    }
-
-    a {
-      color: #00789c;
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-
+    h1 { margin: 0; font-size: 2.2rem; letter-spacing: 1px; }
+    h2 { color: #004d66; font-size: 1.5rem; margin-bottom: 1rem; }
+    ul { padding-left: 1.5rem; }
+    a { color: #00789c; text-decoration: none; }
+    a:hover { text-decoration: underline; }
     .icon-links a {
       margin: 0 0.5rem;
       color: white;
       font-size: 2.0rem;
       transition: color 0.3s;
     }
-
-    .icon-links a:hover {
-      color: #ffd700;
-    }
-
+    .icon-links a:hover { color: #ffd700; }
     footer {
       text-align: center;
       padding: 2rem 1rem;
@@ -221,42 +145,22 @@
       color: white;
       margin-top: 50px;
     }
-
     @media screen and (max-width: 768px) {
       header {
         flex-direction: column;
         text-align: center;
         padding: 2rem 1rem;
       }
-
-      .intro-container {
-        max-width: 90%;
-      }
-
-      header img {
-        width: 120px;
-        height: 120px;
-      }
-
-      nav button {
-        padding: 0.7rem;
-        font-size: 14px;
-      }
-
-      .intro-text {
-        font-size: 1.1rem;
-      }
-
-      .quote {
-        font-size: 1rem;
-      }
+      .intro-container { max-width: 90%; }
+      header img { width: 120px; height: 120px; }
+      nav button { padding: 0.7rem; font-size: 14px; }
+      .intro-text { font-size: 1.1rem; }
+      .quote { font-size: 1rem; }
     }
   </style>
 </head>
 
 <body>
-  
-
   <header>
     <div class="profile-img-container">
       <img src="profile.jpg" alt="Midhun's Photo" />
@@ -278,67 +182,18 @@
         Nothing in life is to be feared, it is only to be understood. Now is the time to understand more, so that we may fear less. — Marie Curie
       </div>
       <div class="icon-links" style="margin-top: 1.5rem;">
-        <style>
-          .icon-links a {
-            margin-right: 10px;
-            font-size: 20px; /* Font Awesome icon size */
-            cursor: pointer;
-            display: inline-block;           /* needed for transform */
-            transition: transform 0.3s ease;
-            color: #fff;      /* icon color */
-          }
-          .icon-links a:hover {
-          filter: grayscale(100%);  
-          transform: scale(1.2);
-          }
-  
-          .icon-links i {
-            font-size: 28px;
-            vertical-align: middle;
-            transition: filter 0.3s, inherit;
-          }
-      
-          .icon-links img {
-            width: 28px;
-            height: 28px;
-            vertical-align: middle;
-            object-fit: contain;
-            filter: grayscale(100%);
-            transition: filter 0.3s;
-          }
-      
-          .icon-links img:hover {
-            filter: grayscale(100%);
-            transform: scale(1.2);
-          }
-        </style>
-      
-        <!-- Email -->
         <a href="mailto:midhun@ifpan.edu.pl" title="Email"><i class="fas fa-envelope"></i></a>
-      
-        <!-- LinkedIn -->
         <a href="https://www.linkedin.com/in/midhun-mohan-anila-8a959679/" title="LinkedIn" target="_blank"><i class="fab fa-linkedin"></i></a>
-      
-        <!-- Google Scholar -->
         <a href="https://scholar.google.pl/citations?user=7EmEQ7YAAAAJ&hl=en" title="Google Scholar" target="_blank"><i class="fas fa-graduation-cap"></i></a>
-      
-        <!-- ORCID -->
         <a href="https://orcid.org/0000-0002-8084-6828" title="ORCID" target="_blank"><i class="fab fa-orcid"></i></a>
-      
-        <!-- ResearchGate (B&W image) -->
         <a href="https://www.researchgate.net/profile/Midhun-Anila" title="ResearchGate" target="_blank">
           <img src="https://help.researchgate.net/hc/article_attachments/17825143633297" alt="ResearchGate">
         </a>
-      
-        <!-- Web of Science (B&W image) -->
         <a href="https://www.webofscience.com/wos/author/record/ABL-8503-2022" title="Web of Science" target="_blank">
           <img src="https://companieslogo.com/img/orig/CLVT.D-e3320a72.png?t=1720244491" alt="Web of Science">
         </a>
-      
-        <!-- GitHub -->
         <a href="https://github.com/midhunanila" title="GitHub" target="_blank"><i class="fab fa-github"></i></a>
       </div>
-
     </div>
   </header>
 
@@ -346,112 +201,76 @@
     <button onclick="toggleSection('about')">About</button>
     <button onclick="toggleSection('research')">Research</button>
     <button onclick="toggleSection('publications')">Publications</button>
-    <button onclick="toggleSection('presentations')">Presentations</button>
     <button onclick="toggleSection('awards')">Awards</button>
-    <button onclick="toggleSection('skills')">Skills</button>
     <button onclick="toggleSection('contact')">Contact</button>
   </nav>
 
   <div id="about" class="section">
-  <div class="section-content">
-    <h2>About Me</h2>
-    <p>I am a PhD candidate specializing in Computational Biophysics at the Polish Academy of Sciences. My work focuses on molecular dynamics simulations of intrinsically disordered proteins (IDPs), exploring complex biomolecular mechanisms using physics-based approaches.</p>
-  </div>
-</div>
+    <div class="section-content">
+      <h2>About Me</h2>
+      <p>I am a PhD candidate in Computational Biophysics at the Institute of Physics, Polish Academy of Sciences, Warsaw. My research focuses on molecular dynamics simulations of intrinsically disordered proteins (IDPs), using a range of computational tools and coarse-grained modeling techniques to explore protein-membrane interactions and aggregation mechanisms.</p>
 
-<div id="research" class="section">
-  <div class="section-content">
-    <h2>Research Interests</h2>
-    <ul>
-      <li>Molecular Dynamics Simulations</li>
-      <li>Intrinsically Disordered Proteins</li>
-      <li>Membrane Biophysics & Protein Interactions</li>
-      <li>Coarse-Grained Modeling & IDP Aggregation</li>
-    </ul>
-  </div>
-</div>
+      <p>I have actively presented my work at several international conferences, including CECAM Darmstadt 2024, UGM London 2024, ECMTB Toledo 2024, Biomolecules & Nanostructures 8 Krakow 2023, and PTBF Warsaw 2022.</p>
 
-<div id="publications" class="section">
-  <div class="section-content">
-    <h2>Selected Publications</h2>
-     <ul>
-  <li><strong>2025</strong> — <a href="https://dx.doi.org/10.2174/0113892037360348250528003832" target="_blank">
-    Clustering‑based Method for Constructing the Phase Diagram of the van der Waals Model Fluid
-  </a>, <em>Current Protein &amp; Peptide Science</em> 26(10): 896–905</li>
-  <li><strong>2024</strong> — <a href="https://doi.org/10.3390/molecules29122768" target="_blank">
-    Scrutinising the Conformational Ensemble of the Intrinsically Mixed-Folded Protein Galectin-3
-  </a>, <em>Molecules</em> 29(12): 2768</li>
-  <li><strong>2024</strong> — <a href="https://doi.org/10.3390/ijms25126698" target="_blank">
-   A Practical Guide to All-Atom and Coarse-Grained Molecular Dynamics Simulations Using Amber and Gromacs: A Case Study of Disulfide-Bond Impact on the Intrinsically Disordered Amyloid Beta 
-  </a>, <em>Int. J. Mol. Sci</em> 25: 6698</li>
-  <li><strong>2023</strong> — <a href="https://doi.org/10.1039/D3SM00131H" target="_blank">
-    Membrane curvature sensing by model biomolecular condensates
-  </a>, <em>Soft Matter</em> 19: 3723–3732</li>
-  <li><strong>2023</strong> — <a href="https://doi.org/10.3390/cells12151974" target="_blank">
-    Crystal structure of the ORP8 lipid transport ORD domain: model of lipid transport
-  </a>, <em>Cells</em> 12(15)</li>
-  <li><strong>2021</strong> — <a href="https://doi.org/10.11648/j.ijamtp.20210701.12" target="_blank">
-    Magnetic Response of a Charged Brownian Particle Under the Action of Two AC Drive
-  </a>, <em>IJAMTP</em> 7(1): 10–15</li>
-</ul>
-
-  </div>
-</div>
-
-<div id="presentations" class="section">
-  <div class="section-content">
-    <h2>Presentations & Conferences</h2>
-    <ul>
-      <li><strong>Oral and Poster:</strong> Membrane curvature sensing, CECAM Darmstadt 2024</li>
-      <li><strong>Oral and Poster:</strong> Galectin-3, UGM London 2024</li>
-      <li><strong>Poster:</strong> Membrane curvature sensing, ECMTB Toledo 2024</li>
-      <li><strong>Poster:</strong> CG MD of IDPs, Krakow 2023</li>
-      <li><strong>Poster:</strong> Alpha-synuclein aggregation, PTBF Warsaw 2022</li>
-      <li><strong>Participation:</strong> EMBO Symposium</li>
-    </ul>
-  </div>
-</div>
-
-<div id="skills" class="section">
-  <div class="section-content">
-    <h2>Technical Skills</h2>
-    <ul>
-      <li><strong>Languages:</strong> Bash, AWK, Python </li>
-      <li><strong>Tools:</strong> Mathematica, Gnuplot, XMGrace</li>
-      <li><strong>Simulation Packages:</strong></li>
-      <ul style="margin-top: 0.5em; margin-bottom: 1em; padding-left: 1.5rem;">
-        <li>Gromacs</li>
-        <li>NAMD</li>
-        <li>LAMMPS</li>
+      <p><strong>Technical Skills:</strong></p>
+      <ul>
+        <li><strong>Programming:</strong> Python, Bash, AWK</li>
+        <li><strong>Simulation Software:</strong> Gromacs, LAMMPS, NAMD</li>
+        <li><strong>Visualization & Analysis:</strong> VMD, PyMOL, XMGrace, Gnuplot</li>
+        <li><strong>Tools:</strong> Mathematica, Origin, LaTeX</li>
+        <li><strong>Operating Systems:</strong> Linux, Windows</li>
       </ul>
-      <li><strong>Visualization & Analysis:</strong> VMD, PyMOL</li>
-      <li><strong>Other:</strong> Linux systems, LaTeX</li>
-      <li><strong>Code Repositories:</strong> Updating soon...</li>
-    </ul>
-  </div>
-</div>
 
-<div id="contact" class="section">
-  <div class="section-content">
-    <h2>Contact</h2>
-    <p><strong>Email:</strong> <a href="mailto:midhun@ifpan.edu.pl">midhun@ifpan.edu.pl</a></p>
-    <p><strong>Phone:</strong> +48 739 428 560</p>
-    <p><strong>Affiliation:</strong><br />
-      Institute of Physics, Polish Academy of Sciences<br />
-      Aleja Lotników 32/46, 02-668, Warsaw, Poland
-    </p>
-  </div>
-</div>
+      <p><strong>Education:</strong></p>
+      <ul>
+        <li><strong>2021 – Present:</strong> PhD in Physics, Institute of Physics, Polish Academy of Sciences, Warsaw, Poland</li>
+        <li><strong>2019 – 2021:</strong> MPhil in Physics, University of Kerala, India</li>
+        <li><strong>2016 – 2018:</strong> M.Sc. in Physics, University of Kerala, India</li>
+      </ul>
 
-<div id="awards" class="section">
-  <div class="section-content">
-    <h2>Awards & Recognition</h2>
-    <ul>
-      <li><strong>2022:</strong> Best Poster Award — <em>PTBF Conference</em>, Warsaw</li>
-    </ul>
+      <p><strong>Collaborator:</strong> Aswin Vinod Muthachikavil, Assistant Professor, Department of Chemical Engineering, BITS Pilani, Hyderabad Campus</p>
+    </div>
   </div>
-</div>
 
+  <div id="research" class="section">
+    <div class="section-content">
+      <h2>Research Interests</h2>
+      <ul>
+        <li>Molecular Dynamics Simulations</li>
+        <li>Intrinsically Disordered Proteins</li>
+        <li>Membrane Biophysics & Protein Interactions</li>
+        <li>Coarse-Grained Modeling & IDP Aggregation</li>
+      </ul>
+    </div>
+  </div>
+
+  <div id="publications" class="section">
+    <div class="section-content">
+      <h2>Selected Publications</h2>
+      <!-- Add publication list here as needed -->
+    </div>
+  </div>
+
+  <div id="awards" class="section">
+    <div class="section-content">
+      <h2>Awards & Recognition</h2>
+      <ul>
+        <li><strong>2022:</strong> Best Poster Award — <em>PTBF Conference</em>, Warsaw</li>
+      </ul>
+    </div>
+  </div>
+
+  <div id="contact" class="section">
+    <div class="section-content">
+      <h2>Contact</h2>
+      <p><strong>Email:</strong> <a href="mailto:midhun@ifpan.edu.pl">midhun@ifpan.edu.pl</a></p>
+      <p><strong>Phone:</strong> +48 739 428 560</p>
+      <p><strong>Affiliation:</strong><br />
+        Institute of Physics, Polish Academy of Sciences<br />
+        Aleja Lotników 32/46, 02-668, Warsaw, Poland
+      </p>
+    </div>
+  </div>
 
   <footer>
     <p>© 2025 Midhun Mohan Anila — All rights reserved.</p>
@@ -459,16 +278,15 @@
 
   <script>
     function toggleSection(id) {
-        const sections = document.querySelectorAll(".section");
-        sections.forEach((section) => {
-          if (section.id === id) {
-            section.classList.toggle("open");
-          } else {
-            section.classList.remove("open");
-          }
-        });
-      }
-
+      const sections = document.querySelectorAll(".section");
+      sections.forEach((section) => {
+        if (section.id === id) {
+          section.classList.toggle("open");
+        } else {
+          section.classList.remove("open");
+        }
+      });
+    }
   </script>
 </body>
 </html>
