@@ -17,6 +17,7 @@
       backdrop-filter: brightness(1) saturate(1.2);
       padding: 0;
     }
+
     header {
       background: linear-gradient(to right, #004d66, #00789c, #00897b);
       color: white;
@@ -28,7 +29,9 @@
       gap: 2rem;
       text-align: left;
     }
+
     .profile-img-container { flex-shrink: 0; display: flex; justify-content: center; }
+
     header img {
       width: 180px;
       height: 180px;
@@ -38,13 +41,16 @@
       box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
+
     @media screen and (max-width: 768px) {
       header img { width: 140px; height: 140px; }
     }
+
     header img:hover {
       transform: scale(1.05);
       box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
     }
+
     .intro-container { max-width: 600px; }
     .intro-text {
       font-family: 'Playfair Display', serif;
@@ -54,17 +60,20 @@
       margin-top: 0.5rem;
     }
     .intro-text span { display: block; margin: 0.3em 0; }
+
     .quote {
       margin-top: 1rem;
       font-style: italic;
       font-size: 1.1rem;
       color: #dbeeff;
     }
+
     .quote::before, .quote::after {
       content: "“";
       font-size: 2rem;
       color: #ffeb3b;
     }
+
     nav {
       display: flex;
       justify-content: center;
@@ -72,6 +81,7 @@
       background: #00789c;
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     }
+
     nav button {
       background: none;
       border: none;
@@ -85,11 +95,13 @@
       margin: 0.3rem;
       background-color: rgba(255, 255, 255, 0.1);
     }
+
     nav button:hover {
       background: #005f7f;
       transform: scale(1.08);
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     }
+
     .section {
       display: none;
       width: 600px;
@@ -102,42 +114,51 @@
       border-radius: 12px;
       z-index: 1;
     }
+
     .section.open {
       display: block;
       animation: slideDown 0.4s ease forwards;
     }
+
     @keyframes slideDown {
       from { opacity: 0; transform: translateY(-20px); }
       to { opacity: 1; transform: translateY(0); }
     }
+
     .section-content {
       padding: 30px 25px;
       opacity: 0;
       transform: translateY(20px);
       animation: slideFade 0.6s forwards;
     }
+
     .section.open .section-content {
       opacity: 1;
       transform: translateY(0);
     }
+
     @keyframes slideFade {
       to {
         opacity: 1;
         transform: translateY(0);
       }
     }
+
     h1 { margin: 0; font-size: 2.2rem; letter-spacing: 1px; }
     h2 { color: #004d66; font-size: 1.5rem; margin-bottom: 1rem; }
     ul { padding-left: 1.5rem; }
     a { color: #00789c; text-decoration: none; }
     a:hover { text-decoration: underline; }
+
     .icon-links a {
       margin: 0 0.5rem;
       color: white;
       font-size: 2.0rem;
       transition: color 0.3s;
     }
+
     .icon-links a:hover { color: #ffd700; }
+
     footer {
       text-align: center;
       padding: 2rem 1rem;
@@ -145,6 +166,7 @@
       color: white;
       margin-top: 50px;
     }
+
     @media screen and (max-width: 768px) {
       header {
         flex-direction: column;
@@ -156,6 +178,65 @@
       nav button { padding: 0.7rem; font-size: 14px; }
       .intro-text { font-size: 1.1rem; }
       .quote { font-size: 1rem; }
+    }
+
+    /* --- GALLERY SECTION STYLES --- */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .gallery-item {
+      text-align: center;
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      transition: transform 0.3s ease;
+    }
+
+    .gallery-item img:hover {
+      transform: scale(1.05);
+    }
+
+    .gallery-item p {
+      margin-top: 0.7rem;
+      font-size: 0.95rem;
+      color: #333;
+    }
+
+    /* MODAL IMAGE VIEWER */
+    #imageModal {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.9);
+      z-index: 9999;
+      align-items: center;
+      justify-content: center;
+    }
+
+    #imageModal img {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 10px;
+    }
+
+    #imageModal span {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      color: white;
+      font-size: 30px;
+      cursor: pointer;
     }
   </style>
 </head>
@@ -251,6 +332,7 @@
     <button onclick="toggleSection('publications')">Publications</button>
     <button onclick="toggleSection('awards')">Awards</button>
     <button onclick="toggleSection('contact')">Contact</button>
+    <button onclick="toggleSection('gallery')">Gallery</button>
   </nav>
 
   <div id="about" class="section">
@@ -345,6 +427,37 @@
     </div>
   </div>
 
+
+  <!-- GALLERY SECTION START -->
+  <div id="gallery" class="section">
+    <div class="section-content">
+      <h2>Gallery: Conferences & Presentations</h2>
+      <div class="gallery-grid">
+        <div class="gallery-item">
+          <img src="gallery/CECAM.jpg" alt="CECAM 2024" onclick="openModal(this)">
+          <p>CECAM Darmstadt 2024 – Poster Presentation</p>
+        </div>
+        <div class="gallery-item">
+          <img src="gallery/UGM.jpg" alt="UGM London Poster" onclick="openModal(this)">
+          <p>UGM London 2024 – Poster on Galectin-3</p>
+        </div>
+        <div class="gallery-item">
+          <img src="gallery/ECMTB.jpg" alt="ECMTB Poster" onclick="openModal(this)">
+          <p>ECMTB Toledo 2024 – IDP & Membranes</p>
+        </div>
+        <div class="gallery-item">
+          <img src="gallery/PTBF1.jpg" alt="PTBF Poster" onclick="openModal(this)">
+          <p>PTBF WARSAW 2022 – IDP & Membranes</p>
+        </div>
+        <div class="gallery-item">
+          <img src="gallery/PTBF2.jpg" alt="PTBF Best Poster" onclick="openModal(this)">
+          <p>PTBF WARSAW 2022 – IDP & Membranes</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- GALLERY SECTION END -->
+
   <div id="contact" class="section">
       <div class="section-content">
         <h2>Contact</h2>
@@ -385,36 +498,50 @@
           </iframe>
         </div>
 
+  
 
-<footer>
-  <p>© 2025 Midhun Mohan Anila — All rights reserved.</p>
-  <p style="font-size: 0.85rem; color: #ccc;">
-    Background image courtesy of 
-    <a href="https://www.the-scientist.com/the-dynamic-lives-of-intrinsically-disordered-proteins-72125" target="_blank" style="color:#ffeb3b;">
-      The Scientist
-    </a>
-  </p>
-  <p style="font-size: 0.85rem; color: #ccc;">
-    Last updated: August 5, 2025
-  </p>
-  <p style="font-size: 0.85rem; color: #ccc;">
-    Website created by Midhun Mohan Anila
-  </p>
-</footer>
+  <!-- MODAL VIEWER -->
+  <div id="imageModal" onclick="closeModal()">
+    <span>&times;</span>
+    <img id="modalImg" />
+  </div>
 
-
+  <footer>
+    <p>© 2025 Midhun Mohan Anila — All rights reserved.</p>
+    <p style="font-size: 0.85rem; color: #ccc;">
+      Background image courtesy of 
+      <a href="https://www.the-scientist.com/the-dynamic-lives-of-intrinsically-disordered-proteins-72125" target="_blank" style="color:#ffeb3b;">
+        The Scientist
+      </a>
+    </p>
+    <p style="font-size: 0.85rem; color: #ccc;">Last updated: August 5, 2025</p>
+    <p style="font-size: 0.85rem; color: #ccc;">Website created by Midhun Mohan Anila</p>
+  </footer>
 
   <script>
     function toggleSection(id) {
       const sections = document.querySelectorAll(".section");
       sections.forEach((section) => {
+        section.classList.remove("open");
         if (section.id === id) {
-          section.classList.toggle("open");
-        } else {
-          section.classList.remove("open");
+          section.classList.add("open");
         }
       });
+    }
+
+    function openModal(imgElement) {
+      const modal = document.getElementById('imageModal');
+      const modalImg = document.getElementById('modalImg');
+      modalImg.src = imgElement.src;
+      modal.style.display = 'flex';
+    }
+
+    function closeModal() {
+      document.getElementById('imageModal').style.display = 'none';
     }
   </script>
 </body>
 </html>
+        
+
+        
