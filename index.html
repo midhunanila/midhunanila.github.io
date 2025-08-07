@@ -336,37 +336,33 @@
        <style>
         .icon-links a {
           display: inline-block;
-          width: 28px;
-          height: 28px;
-          overflow: hidden;
           margin-right: 10px;
           cursor: pointer;
-          vertical-align: middle;
-          text-align: center; /* to center font icons */
-          line-height: 28px;  /* vertically center <i> */
+          transition: transform 0.3s ease;
         }
-        
+      
         .icon-links a i,
         .icon-links a img {
           font-size: 28px;
           width: 28px;
           height: 28px;
-          transition: transform 0.3s ease, filter 0.3s ease;
-          display: inline-block;
           vertical-align: middle;
+          transition: transform 0.3s ease;
+        }
+      
+        .icon-links a img {
           object-fit: contain;
         }
-        
+      
         .icon-links a:hover i,
         .icon-links a:hover img {
-          filter: grayscale(100%);
-          transform: scale(1.25);
+          filter: grayscale(100%); 
+          transform: scale(1.25); /* Zoom effect */
         }
-        
+      
         .icon-links a:focus {
           outline: none;
         }
-
       </style>
 
 
