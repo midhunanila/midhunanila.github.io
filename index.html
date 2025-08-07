@@ -335,15 +335,14 @@
       <div class="icon-links" style="margin-top: 1.5rem;">
        <style>
         .icon-links a {
-          margin-right: 10px;
           display: inline-block;
+          margin-right: 10px;
           cursor: pointer;
           transition: transform 0.3s ease;
-          color: #fff; /* Icon color for <i> elements */
         }
       
-        .icon-links i,
-        .icon-links img {
+        .icon-links a i,
+        .icon-links a img {
           font-size: 28px;
           width: 28px;
           height: 28px;
@@ -351,20 +350,20 @@
           transition: transform 0.3s ease;
         }
       
-        .icon-links img {
+        .icon-links a img {
           object-fit: contain;
         }
       
         .icon-links a:hover i,
         .icon-links a:hover img {
-          transform: scale(1.25); /* Smooth zoom on hover */
+          transform: scale(1.25); /* Zoom effect */
         }
       
-        /* Optional: remove outline when icon is focused via keyboard */
         .icon-links a:focus {
           outline: none;
         }
       </style>
+
 
 
 
