@@ -116,6 +116,7 @@
       box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
       border-radius: 12px;
       z-index: 1;
+      position: relative;
     }
 
     .section.open {
@@ -138,6 +139,24 @@
     .section.open .section-content {
       opacity: 1;
       transform: translateY(0);
+    }
+    .section .close-btn {
+      position: absolute;
+      top: 12px;
+      right: 16px;
+      font-size: 24px;
+      color: #444;
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-weight: bold;
+      z-index: 10;
+      transition: transform 0.2s ease, color 0.2s ease;
+    }
+
+    .section .close-btn:hover {
+      color: #ff0000;
+      transform: scale(1.2);
     }
 
     @keyframes slideFade {
