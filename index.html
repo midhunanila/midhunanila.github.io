@@ -336,18 +336,24 @@
       <style>
       .icon-links a {
         display: inline-block;
+        width: 28px;          /* Fix width */
+        height: 28px;         /* Fix height */
+        overflow: hidden;     /* Contain zoom */
         margin-right: 10px;
         cursor: pointer;
-        transition: transform 0.3s ease; /* This can be removed here since children have their own */
+        vertical-align: middle;
+        /* Removed transition here */
       }
+      
       .icon-links a img {
         display: inline-block;
         width: 28px;
         height: 28px;
         vertical-align: middle;
         transition: transform 0.3s ease, filter 0.3s ease;
+        transform-origin: center;  /* Ensure zoom from center */
       }
-    
+      
       .icon-links a:hover img {
         filter: grayscale(100%);
         transform: scale(1.25);
@@ -358,20 +364,16 @@
         width: 28px;
         height: 28px;
         vertical-align: middle;
-        transition: transform 0.3s ease, filter 0.3s ease; /* Add filter here too */
+        transition: transform 0.3s ease, filter 0.3s ease;
+        transform-origin: center;
       }
-    
       
       .icon-links a:hover i {
         filter: grayscale(100%);
-        transform: scale(1.25); /* zoom up */
+        transform: scale(1.25);
       }
-
       
       </style>
-
-
-
 
                 <!-- Email -->
         <a href="mailto:midhun@ifpan.edu.pl" title="Email"><i class="fas fa-envelope"></i></a>
