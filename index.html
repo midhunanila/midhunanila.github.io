@@ -582,7 +582,13 @@
       const modalImg = document.getElementById('modalImg');
       modalImg.src = imgElement.src;
       modal.style.display = 'flex';
-    }
+
+      // Prevent click on image from bubbling and triggering close
+      modalImg.onclick = function(event) {
+        event.stopPropagation();
+  }
+}
+
 
     function closeModal() {
       document.getElementById('imageModal').style.display = 'none';
