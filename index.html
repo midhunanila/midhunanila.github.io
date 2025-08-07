@@ -180,6 +180,48 @@
       .quote { font-size: 1rem; }
     }
 
+    /* Fade-in and slide animation */
+@keyframes fadeSlideUp {
+        0% {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      
+      /* Apply animation to all images */
+      img {
+        animation: fadeSlideUp 0.8s ease-in-out forwards;
+        opacity: 0;
+      }
+      
+      /* Animate text elements */
+      h1, h2, h3, p, li, a {
+        animation: fadeSlideUp 0.8s ease-in-out forwards;
+        opacity: 0;
+      }
+      
+      /* Animate profile image separately with slight delay */
+      .profile-img-container img {
+        animation-delay: 0.2s;
+      }
+      
+      /* Gallery images delay */
+      .gallery-item img {
+        animation-delay: 0.4s;
+      }
+      
+      /* Text delay */
+      .intro-text span,
+      .section-content p,
+      .section-content li {
+        animation-delay: 0.6s;
+      }
+
+
     /* --- GALLERY SECTION STYLES --- */
     .gallery-grid {
       display: grid;
@@ -548,6 +590,23 @@
       document.getElementById('imageModal').style.display = 'none';
     }
   </script>
+
+<script>
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.animationPlayState = 'running';
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('img, h1, h2, h3, p, li, a').forEach(el => {
+    el.style.animationPlayState = 'paused';
+    observer.observe(el);
+  });
+</script>
+        
 </body>
 </html>
         
