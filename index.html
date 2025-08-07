@@ -338,42 +338,34 @@
           margin-right: 10px;
           display: inline-block;
           cursor: pointer;
-          transition: transform 0.3s ease, filter 0.3s ease;
-          color: #fff;
+          transition: transform 0.3s ease;
+          color: #fff; /* Icon color for <i> elements */
         }
       
-        .icon-links a:hover {
-          transform: scale(1.25);           /* Zoom in */
-          filter: grayscale(100%);          /* Optional effect */
-          color: #ffd700;                   /* Optional color on hover */
-        }
-      
-        .icon-links i {
-          font-size: 28px;
-          vertical-align: middle;
-          transition: transform 0.3s ease, filter 0.3s ease;
-        }
-      
+        .icon-links i,
         .icon-links img {
+          font-size: 28px;
           width: 28px;
           height: 28px;
           vertical-align: middle;
-          object-fit: contain;
-          transition: transform 0.3s ease, filter 0.3s ease;
-          filter: grayscale(100%);
+          transition: transform 0.3s ease;
         }
       
-        .icon-links img:hover {
-            filter: grayscale(100%);
-            transform: scale(1.2);
-          }
+        .icon-links img {
+          object-fit: contain;
+        }
       
-        /* Optional: focus effect for keyboard users */
+        .icon-links a:hover i,
+        .icon-links a:hover img {
+          transform: scale(1.25); /* Smooth zoom on hover */
+        }
+      
+        /* Optional: remove outline when icon is focused via keyboard */
         .icon-links a:focus {
-          outline: 2px dashed #ffd700;
-          outline-offset: 4px;
+          outline: none;
         }
       </style>
+
 
 
                 <!-- Email -->
