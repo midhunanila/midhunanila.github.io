@@ -341,7 +341,7 @@
         transition: transform 0.3s ease; /* This can be removed here since children have their own */
       }
     
-      .icon-links a img,
+      
       .icon-links a i {
         font-size: 28px;
         width: 28px;
@@ -350,10 +350,22 @@
         transition: transform 0.3s ease, filter 0.3s ease; /* Add filter here too */
       }
     
-      .icon-links a:hover img,
+      
       .icon-links a:hover i {
         filter: grayscale(100%);
         transform: scale(1.25); /* zoom up */
+      }
+
+      .icon-links a img {
+        display: inline-block;
+        width: 28px;
+        height: 28px;
+        transition: transform 0.3s ease, filter 0.3s ease;
+      }
+    
+      .icon-links a:hover img {
+        transform: scale(1.25);
+        filter: grayscale(100%);
       }
     </style>
 
