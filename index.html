@@ -333,45 +333,30 @@
         Nothing in life is to be feared; it is only to be understood. Now is the time to understand more, so that we may fear less. — Marie Curie
       </div>
       <div class="icon-links" style="margin-top: 1.5rem;">
-       <style>
-        .icon-links a {
-          display: inline-block;
-          margin-right: 10px;
-          cursor: pointer;
-          transition: transform 0.3s ease;
-        }
-      
-        .icon-links a i {
-          font-size: 28px;
-          width: 28px;
-          height: 28px;
-          vertical-align: middle;
-          transition: transform 0.3s ease;
-        }
+      <style>
+      .icon-links a {
+        display: inline-block;
+        margin-right: 10px;
+        cursor: pointer;
+        transition: transform 0.3s ease; /* This can be removed here since children have their own */
+      }
+    
+      .icon-links a img,
+      .icon-links a i {
+        font-size: 28px;
+        width: 28px;
+        height: 28px;
+        vertical-align: middle;
+        transition: transform 0.3s ease, filter 0.3s ease; /* Add filter here too */
+      }
+    
+      .icon-links a:hover img,
+      .icon-links a:hover i {
+        filter: grayscale(100%);
+        transform: scale(1.25); /* zoom up */
+      }
+    </style>
 
-         
-        .icon-links a img {
-          font-size: 28px;
-          width: 28px;
-          height: 28px;
-          vertical-align: middle;
-          transition: transform 0.3s ease;
-          object-fit: contain;
-        }
-      
-        
-      
-        .icon-links a:hover img,
-        .icon-links a:hover i {
-          filter: grayscale(100%);
-          transform: scale(1.25); /* zoom up */
-        }
-
-      
-        .icon-links a:focus {
-          outline: none;
-        }
-      </style>
 
 
 
