@@ -336,17 +336,16 @@
        <style>
         .icon-links a {
           margin-right: 10px;
-          font-size: 20px; /* Base font size for alignment */
-          cursor: pointer;
           display: inline-block;
+          cursor: pointer;
           transition: transform 0.3s ease, filter 0.3s ease;
           color: #fff;
         }
       
         .icon-links a:hover {
-          transform: scale(1.2);
-          filter: grayscale(100%);
-          color: #ffd700; /* optional highlight */
+          transform: scale(1.25);           /* Zoom in */
+          filter: grayscale(100%);          /* Optional effect */
+          color: #ffd700;                   /* Optional color on hover */
         }
       
         .icon-links i {
@@ -360,20 +359,23 @@
           height: 28px;
           vertical-align: middle;
           object-fit: contain;
-          filter: grayscale(100%);
           transition: transform 0.3s ease, filter 0.3s ease;
-        }
-      
-        .icon-links img:hover {
-          transform: scale(1.2);
           filter: grayscale(100%);
         }
       
+        .icon-links a:hover img,
+        .icon-links a:hover i {
+          transform: scale(1.25);
+          filter: grayscale(0%);
+        }
+      
+        /* Optional: focus effect for keyboard users */
         .icon-links a:focus {
           outline: 2px dashed #ffd700;
           outline-offset: 4px;
         }
       </style>
+
 
                 <!-- Email -->
         <a href="mailto:midhun@ifpan.edu.pl" title="Email"><i class="fas fa-envelope"></i></a>
