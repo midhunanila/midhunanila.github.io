@@ -334,10 +334,16 @@
       </div>
       <div class="icon-links" style="margin-top: 1.5rem;">
        <style>
+        .icon-links {
+          display: flex;
+          align-items: center;
+        }
+        
         .icon-links a {
           display: inline-block;
           margin-right: 10px;
           cursor: pointer;
+          position: relative; /* needed for z-index on hover */
           transition: transform 0.3s ease;
         }
         
@@ -347,25 +353,25 @@
           width: 28px;
           height: 28px;
           vertical-align: middle;
-          transition: transform 0.3s ease;
-          cursor: pointer; /* Add cursor here */
-          pointer-events: auto;
-        }
-        
-        .icon-links a img {
-          transition: filter 0.3s ease, transform 0.3s ease;
           object-fit: contain;
+          display: inline-block; /* important for transforms on img */
+          pointer-events: auto;
+          transition: transform 0.3s ease, filter 0.3s ease;
+          will-change: transform, filter;
         }
         
         .icon-links a:hover i,
         .icon-links a:hover img {
           filter: grayscale(100%);
           transform: scale(1.25);
+          z-index: 10;
         }
         
-        .icon-links a:focus {
-          outline: none;
+        .icon-links a:hover {
+          position: relative;
+          z-index: 10;
         }
+
 
       </style>
 
